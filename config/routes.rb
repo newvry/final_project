@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :units
   end
 
+  root "courses#index"
+
 end

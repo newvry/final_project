@@ -1,0 +1,10 @@
+<h1>My Taiwan Tour</h1>
+
+<ul>
+  <% @courses.each do |course| %>
+  <div class="course_box col-sm-4">
+    <li><%= course.title %></li>
+    <li><%= course.description %></li>
+  </div>
+  <% end %>
+</ul>
