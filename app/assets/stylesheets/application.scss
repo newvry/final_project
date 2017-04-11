@@ -6,6 +6,34 @@
 // regular setting=====================================
 
 *{
-  // border: solid 1px;
+  border: solid 1px;
+  box-sizing: border-box;
 }
 
+ul{
+  list-style-type: none;
+}
+
+
+// course index setting================================
+
+.courses_list{
+  margin-top: 60px;
+}
+
+.course_box{
+  height: 60vh;
+  margin: -5px;
+
+  border: solid 1px #333;
+  border-radius: 10px;
+}
+
+.index_intro{
+  margin-top: 40%;
+}
+
+.row:first-child .course_box{
+  background-image: url('http://legacy.skyscrapercenter.com/class-image.php/userpics/10005/?width=1000&height=800&image=/images/albums/userpics/10005/Tapei101_Ext-MainUp_%28c%29TaipeiFinancial.jpg');
+  background-position: -60px, 0px;
+}
