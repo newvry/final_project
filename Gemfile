@@ -37,6 +37,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'faker'
+gem 'omniauth-facebook'
+gem 'settingslogic'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
