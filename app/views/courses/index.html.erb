@@ -1,0 +1,18 @@
+<h1>My Taiwan Tour</h1>
+
+<ul class="courses_list">
+  <div class="row">
+  <% @courses.each do |course| %>
+    <div class="col-sm-4">
+      <div class="course_box">
+        <li class="text-center">
+          <div class="index_intro">
+            <h2><%= course.title %></h2>
+            <p><%= course.description %></p>
+          </div>
+        </li>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</ul>
