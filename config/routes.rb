@@ -8,5 +8,12 @@ Rails.application.routes.draw do
     resources :units
   end
 
+  resources :admin do
+    resources :courses
+    resources :lessons do
+      resources :units
+    end
+  end
+
   root "courses#index"
 end
