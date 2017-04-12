@@ -9,9 +9,8 @@
   </head>
 
   <body>
-    <div class="container">
       <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
+        <div class="container">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">My Taiwan tour</a>
           </div>
@@ -21,12 +20,27 @@
             <li><a href="#">Page 2</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           <% if current_user %>
+              <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+              <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
+            <% else %>
+              <li><%= link_to '註冊', new_registration_path(:user), :class => "glyphicon glyphicon-log-in" %></li>
+              <li><%= link_to "登入 Facebook", user_facebook_omniauth_authorize_path, :class => "glyphicon glyphicon-user" %></li>
+            <% end %>
           </ul>
         </div>
       </nav>
+      <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
+    <footer style="margin-top: 100px;">
+      <div class="container">
+        <p class="text-center">Copyright ©2017 Alpha Camp
+          <br>Design by
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

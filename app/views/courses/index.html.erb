@@ -1,10 +1,10 @@
-<h1>My Taiwan Tour</h1>
+<h1 class="text-center">Tutorial</h1>
 
 <ul class="courses_list">
   <div class="row">
   <% @courses.each do |course| %>
     <div class="col-sm-4">
-      <div class="course_box">
+      <div class="course_box course_<%= course.id %>">
         <li class="text-center">
           <div class="index_intro">
             <h1><%= course.title %></h1>
