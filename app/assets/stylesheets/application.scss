@@ -6,12 +6,24 @@
 // regular setting=====================================
 
 *{
-  border: solid 1px;
+  // border: solid 1px;
   box-sizing: border-box;
+}
+
+body, html{
+  // height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1, p{
+  transition: .5s;
 }
 
 ul{
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -27,13 +39,55 @@ ul{
 
   border: solid 1px #333;
   border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(0,0,0,.5);
+
+  transition: .5s;
+
+  cursor: pointer;
+}
+
+.course_box:hover{
+  transform: scale(1.02);
+  box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+}
+
+.course_box:hover h1{
+  transform: scale(1.5);
+}
+
+.course_box:hover p{
+  transform: scale(1.5);
 }
 
 .index_intro{
   margin-top: 40%;
 }
 
-.row:first-child .course_box{
+.row{
+  width: 95%;
+  margin: auto;
+}
+
+.course_1{
   background-image: url('http://legacy.skyscrapercenter.com/class-image.php/userpics/10005/?width=1000&height=800&image=/images/albums/userpics/10005/Tapei101_Ext-MainUp_%28c%29TaipeiFinancial.jpg');
   background-position: -60px, 0px;
+}
+
+.course_2{
+  background-image: url('https://www.55688.com.tw/img/image/%E5%8F%B0%E5%8C%97%E6%99%AF%E9%BB%9E/%E9%99%BD%E6%98%8E%E5%B1%B1%20%E7%B9%A1%E7%90%83%E8%8A%B1%E6%B5%B7%20%E8%B3%9E%E4%B8%8D%E7%9B%A1/%E9%87%91%E5%B1%B1%E8%80%81%E8%A1%973.JPG');
+  background-size: cover;
+  background-position: -250px, 0px;
+}
+
+.course_3{
+  background-image: url('http://www.trip-stay.com.tw/wp-content/uploads/2013/07/%E5%85%AD%E5%90%88%E5%A4%9C%E5%B8%82.jpg');
+  // background-size: cover;
+  background-position: 600px center;
+  color: white;
+}
+
+footer{
+  height: 100px;
+  background-color: #222;
+  color: white;
 }
