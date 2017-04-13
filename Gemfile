@@ -39,6 +39,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'faker'
 gem 'omniauth-facebook'
 gem 'settingslogic'
+gem 'simple_form'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

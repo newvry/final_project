@@ -1,1 +1,26 @@
-<h1>Admin Courses</h1>
+<h1 class="text-center">Admin Courses</h1>
+<%= link_to 'Create', new_admin_course_path, class: "btn btn-success btn-xs" %>
+<table class="table table-hover text-center">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+    <tr>
+      <td>
+        <%= link_to course.title, admin_lessons_path %>
+      </td>
+      <td><%= course.description %></td>
+      <td>
+        <div class="btn btn-primary btn-xs">EDIT</div>
+        <%= link_to 'DEL', admin_course_path(course), method: :delete, 
+                      data: {confirm: 'Destroy 【' + course.title +  '】 ?' }, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
