@@ -6,7 +6,13 @@ class Admin::LessonsController < ApplicationController
   before_action :lesson_find, only: [:edit, :update, :destroy]
 
   def index
-    @lessons = Lesson.all
+    # @course = Course.find(params[:m])
+    # @lessons = @course.lessons
+  end
+
+  def show
+    @course = Course.find(params[:id])
+    @lessons = @course.lessons
   end
 
   def new
