@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :units
   end
 
-  resources :admin do
+  namespace :admin do
     resources :courses
     resources :lessons do
       resources :units
