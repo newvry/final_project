@@ -1,5 +1,5 @@
 class Admin::CoursesController < ApplicationController
-  before_action :authenticate_user! 
+  before_action :authenticate_user!
   before_action :authenticate_admin
 
   before_action :find_course, only: [:edit, :update, :destroy]
@@ -41,6 +41,6 @@ class Admin::CoursesController < ApplicationController
   def course_params
     params.require(:course).permit(:title, :description)
   end
-  
+
 
 end
