@@ -1,5 +1,8 @@
 class Admin::LessonsController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :authenticate_admin
+
   before_action :lesson_find, only: [:edit, :update, :destroy]
 
   def index
