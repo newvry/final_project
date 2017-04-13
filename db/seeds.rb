@@ -19,18 +19,19 @@ course_list.each do |course|
   Course.create( :title => course["title"], :description => course["description"] )
 end
 
+Lesson.destroy_all
 
 lesson_list = [
-  {"title" => "導覽簡介與認識旅客", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.first.id},
-  {"title" => "旅程中的溝通與關懷技巧", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.first.id},
-  {"title" => "旅遊常見問題解決與應對", "description" => "", "course_id" => Course.first.id},
+  {"title" => "導覽簡介與認識旅客", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "初級").id},
+  {"title" => "旅程中的溝通與關懷技巧", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "初級").id},
+  {"title" => "旅遊常見問題解決與應對", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "初級").id},
   {"title" => "歷史", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "中級").id},
   {"title" => "飲食", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "中級").id},
   {"title" => "建築", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "中級").id},
   {"title" => "主題式瀏覽", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "中級").id},
-  {"title" => "生活策展學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.last.id},
-  {"title" => "演講學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.last.id},
-  {"title" => "創作應用", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.last.id}
+  {"title" => "生活策展學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "高級").id},
+  {"title" => "演講學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "高級").id},
+  {"title" => "創作應用", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "高級").id}
 ]
 
 lesson_list.each do |lesson|
