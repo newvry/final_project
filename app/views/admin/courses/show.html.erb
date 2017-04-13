@@ -1,12 +1,13 @@
 <h1 class="text-center">Admin Lessons</h1>
 
-<%= link_to "Create", new_admin_lesson_path, :class => "btn btn-warning btn-xs" %>
+<%= link_to "Create", new_admin_lesson_path(course_id: @course), :class => "btn btn-warning btn-xs" %>
 <%= link_to 'Back', admin_courses_path, class: "btn btn-default btn-xs" %>
 <table class="table table-hover text-center">
   <thead>
     <tr>
       <th>Title</th>
       <th>Description</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,8 +15,10 @@
       <tr>
         <td><%= lesson.title %></td>
         <td><%= lesson.description %></td>
-        <td><%= link_to "Edit", edit_admin_lesson_path(lesson), :class => "btn btn-info" %></td>
-        <td><%= link_to "Del", admin_lesson_path(lesson), method: :delete, :class => "btn btn-danger", data: { confirm: "Delete " + lesson.title + " ?" } %></td>
+        <td>
+          <%= link_to "Edit", edit_admin_lesson_path(lesson, course_id: @course), :class => "btn btn-info" %>
+          <%= link_to "Del", admin_lesson_path(lesson, course_id: @course), method: :delete, :class => "btn btn-danger", data: { confirm: "Delete " + lesson.title + " ?" } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

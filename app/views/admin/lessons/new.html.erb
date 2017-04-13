@@ -1,6 +1,6 @@
 <h2>Create lesson</h2>
 
-<%= form_for @lesson, url: admin_lessons_path do |f| %>
+<%= form_for @lesson, url: admin_lessons_path(course_id: @course) do |f| %>
   <div class="form-group">
     <%= render partial: 'form', locals: { f: f } %>
     <%= f.submit :class => "btn btn-default" %>

@@ -1,9 +1,9 @@
 <h2>Admin edit <%= @lesson.title %></h2>
 
-<%= form_for @lesson, url: admin_lesson_path(@lesson) do |f| %>
+<%= form_for @lesson, url: admin_lesson_path(@lesson, course_id: @course) do |f| %>
   <div class="form-group">
     <%= render partial: 'form', locals: { f: f } %>
     <%= f.submit :class => "btn btn-success" %>
-    <%= link_to 'Cancel', admin_lessons_path, class: "btn btn-default" %>
+    <%= link_to 'Cancel', admin_course_path(@course), class: "btn btn-default" %>
   </div>  
 <% end %>

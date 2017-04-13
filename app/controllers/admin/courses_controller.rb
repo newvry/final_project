@@ -2,7 +2,7 @@ class Admin::CoursesController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_admin
 
-  before_action :find_course, only: [:edit, :update, :destroy]
+  before_action :find_course, only: [:edit, :show, :update, :destroy]
 
   def index
     @courses = Course.all
@@ -10,6 +10,10 @@ class Admin::CoursesController < ApplicationController
 
   def new
     @course = Course.new
+  end
+
+  def show
+    @lessons = @course.lessons
   end
 
   def create
