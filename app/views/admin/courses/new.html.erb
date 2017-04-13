@@ -1,0 +1,12 @@
+<h2>Create Course</h2>
+<hr>
+<%= simple_form_for @course, url: admin_courses_path do |course| %>
+  <div class="form-group">
+    <ul>
+      <li><%= course.input :title, input_html: { class: "form-control"} %></li>
+      <li><%= course.input :description, input_html: { class: "form-control"} %></li>
+    </ul>
+  </div>
+  <%= course.submit 'Creat', class: "btn btn-success btn-xs" %>
+	<%= link_to 'Cancel', admin_courses_path, class: "btn btn-default btn-xs" %>
+<% end %>
