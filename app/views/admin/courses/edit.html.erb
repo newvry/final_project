@@ -1,0 +1,7 @@
+<h2>Edit course</h2>
+<hr>
+<%= simple_form_for @course, url: admin_course_path(@course) do |course| %>
+  <%= render partial: 'form',locals: { course: course }  %>
+  <%= course.submit 'Update', class: "btn btn-success btn-xs" %>
+	<%= link_to 'Cancel', admin_courses_path, class: "btn btn-default btn-xs" %>
+<% end %>
