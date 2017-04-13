@@ -1,5 +1,7 @@
 class Admin::LessonsController < ApplicationController
 
+  before_action :lesson_find, only: [:edit, :update, :destroy]
+
   def index
     @lessons = Lesson.all
   end
@@ -18,11 +20,9 @@ class Admin::LessonsController < ApplicationController
   end
 
   def edit
-    @lesson = Lesson.find(params[:id])
   end
 
   def update
-    @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
       redirect_to admin_lessons_path
     else
@@ -30,8 +30,17 @@ class Admin::LessonsController < ApplicationController
     end
   end
 
+  def destroy
+    @lesson.destroy
+    redirect_to admin_lessons_path
+  end
+
 
   private
+
+  def lesson_find
+    @lesson = Lesson.find(params[:id])
+  end
 
   def lesson_params
     params.require(:lesson).permit(:title, :description)
