@@ -17,6 +17,19 @@ class Admin::LessonsController < ApplicationController
     end
   end
 
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(lesson_params)
+      redirect_to admin_lessons_path
+    else
+      render :edit
+    end
+  end
+
 
   private
 
