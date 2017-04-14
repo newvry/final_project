@@ -2,7 +2,7 @@
 lock "3.8.0"
 
 `ssh-add` # 注意這是鍵盤左上角的「 `」不是單引號「 '」
-set :application, 'rails-exercise'
+set :application, 'final_project'
 
 set :repo_url, 'git@github.com:newvry/final_project.git'
 set :deploy_to, '/home/eason/final_project'
