@@ -9,9 +9,9 @@
 Course.destroy_all
 
 course_list = [
-  {"title" => "初級", "description" => "第一關"},
-  {"title" => "中級", "description" => "第二關"},
-  {"title" => "高級", "description" => "第三關"}
+  {"title" => "Basis Level", "description" => "第一關"},
+  {"title" => "Intermediate Level", "description" => "第二關"},
+  {"title" => "Advanced Level", "description" => "第三關"}
 ]
 
 

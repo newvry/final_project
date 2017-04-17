@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-lg-3 course_left_pannel">
+
+  </div>
+
+  <div class="col-lg-9 course_right_pannel">
+    <div class="course_show_box">
+      <h4><%= @course.title %></h4>
+    </div>
+    <ul>
+      <% @lessons.each do |lesson| %>
+        <div class="lessons_box">
+          <li><%= lesson.title %></li>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>

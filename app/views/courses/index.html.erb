@@ -2,17 +2,29 @@
 
 <ul class="courses_list">
   <div class="row">
-  <% @courses.each do |course| %>
-    <div class="col-sm-4">
-      <div class="course_box course_<%= course.id %>">
-        <li class="text-center">
-          <div class="index_intro">
-            <h1><%= course.title %></h1>
-            <p><%= course.description %></p>
+    <% @courses.each do |course| %>
+      <%= link_to course_path(course) do %>
+        <div class="col-sm-4">
+          <div class="course_box course_<%= course.id %>">
+              <li class="text-center">
+                <div class="index_intro">
+                  <h1><%= course.title %></h1>
+                  <p><%= course.description %></p>
+                </div>
+                <div class="course_info text-muted">
+                  <div class="total_hours"><span>Total Hours : 30 hrs</span></div>
+                  <div class="total_progress">
+                    <div class="fa fa-star"></div>
+                    <div class="fa fa-star"></div>
+                    <div class="fa fa-star"></div>
+                    <div class="fa fa-star"></div>
+                    <div class="fa fa-star"></div>
+                  </div>
+                </div>
+              </li>
           </div>
-        </li>
-      </div>
-    </div>
-  <% end %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </ul>

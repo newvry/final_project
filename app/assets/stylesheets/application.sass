@@ -1,0 +1,99 @@
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "font-awesome"
+
+
+// regular setting=====================================
+
+*
+  border: solid 1px
+  box-sizing: border-box
+
+body, html
+  // height: 100vh
+  margin: 0
+  padding: 0
+
+h1, p
+  transition: .5s
+
+ul
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+th
+  text-align: center
+
+
+
+// course index setting================================
+
+.courses_list
+  margin-top: 60px
+
+  a
+  &:hover, &:active, &:link, &:visited
+    color: black
+    background-color: transparent
+    text-decoration: none
+
+.course_box
+  height: 60vh
+  margin: -5px
+
+  // position: relative
+
+  border: solid 1px #333
+  border-radius: 10px
+  box-shadow: 0px 0px 8px rgba(0,0,0,.5)
+
+  transition: .5s
+  
+
+  &:hover
+    transform: scale(1.02)
+    box-shadow: 0px 0px 10px rgba(0,0,0,.8)
+
+  &:hover h1
+    transform: scale(1.5)
+
+  &:hover p
+    transform: scale(1.5)
+  
+  &:hover .course_info
+    transform: scale(1.2)
+
+.index_intro
+  margin-top: 40%
+
+.row
+  width: 95%
+  margin: auto
+
+.course_info
+  // position: absolute
+  margin-top: 50px
+  transition: .5s
+
+
+
+// course show setting=================================
+
+.course_left_pannel
+
+
+.course_show_box
+  border: solid 1px
+  display: inline-flex
+  padding: 10px 30px
+
+.lessons_box
+  border: solid 1px
+  display: inline-flex
+  padding: 10px 30px
+
+footer
+  height: 100px
+  background-color: #222
+  color: white
