@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412091947) do
+ActiveRecord::Schema.define(version: 20170417123557) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20170412091947) do
   create_table "favorites", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fileuploads", force: :cascade do |t|
+    t.string   "document"
+    t.integer  "user_id"
+    t.integer  "unit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170412091947) do
     t.integer  "lesson_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "read"
     t.index ["lesson_id"], name: "index_units_on_lesson_id"
   end
 
@@ -73,6 +82,14 @@ ActiveRecord::Schema.define(version: 20170412091947) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["fb_uid"], name: "index_users_on_fb_uid"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "videouploads", force: :cascade do |t|
+    t.string   "video"
+    t.integer  "user_id"
+    t.integer  "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
