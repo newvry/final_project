@@ -11,10 +11,10 @@ class Admin::LessonsController < ApplicationController
   #   @lessons = @course.lessons
   # end
 
-  # def show
-  #   @course = Course.find(params[:id])
-  #   @lessons = @course.lessons
-  # end
+  def show
+    @lesson = Lesson.find(params[:id])
+    @units = @lesson.units
+  end
 
   def new
     @lesson = Lesson.new

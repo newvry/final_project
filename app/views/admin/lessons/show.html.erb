@@ -1,0 +1,15 @@
+<h1>Admin<%= @lesson.title %></h1>
+
+<ul>
+  <% @units.each do |unit| %>
+  <li>
+    <%= unit.title %>
+  </li>
+  <li>
+    <%= unit.description %>
+  </li>
+  <li>
+    <%= unit.videoupload.title %>
+  </li>
+  <% end %>
+</ul>

@@ -13,7 +13,7 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= lesson.title %></td>
+        <td><%= link_to lesson.title, admin_lesson_path(lesson), :class => "btn btn-info" %></td>
         <td><%= lesson.description %></td>
         <td>
           <%= link_to "Edit", edit_admin_lesson_path(lesson, course_id: @course), :class => "btn btn-info" %>
