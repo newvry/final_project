@@ -13,11 +13,11 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= link_to lesson.title, admin_lesson_path(lesson), :class => "btn btn-info" %></td>
+        <td><%= link_to lesson.title, admin_lesson_path(lesson) %></td>
         <td><%= lesson.description %></td>
         <td>
-          <%= link_to "Edit", edit_admin_lesson_path(lesson, course_id: @course), :class => "btn btn-info" %>
-          <%= link_to "Del", admin_lesson_path(lesson, course_id: @course), method: :delete, :class => "btn btn-danger", data: { confirm: "Delete " + lesson.title + " ?" } %>
+          <%= link_to "Edit", edit_admin_lesson_path(lesson, course_id: @course), :class => "btn btn-info btn-xs" %>
+          <%= link_to "Del", admin_lesson_path(lesson, course_id: @course), method: :delete, :class => "btn btn-danger btn-xs", data: { confirm: "Delete " + lesson.title + " ?" } %>
         </td>
       </tr>
     <% end %>

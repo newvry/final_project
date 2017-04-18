@@ -1,5 +1,6 @@
 <h1>Admin<%= @lesson.title %></h1>
 
+<%= link_to 'Create', new_admin_lesson_unit_path(@lesson), class: 'btn btn-success btn-xs' %>
 <ul>
   <% @units.each do |unit| %>
   <li>
@@ -9,7 +10,6 @@
     <%= unit.description %>
   </li>
   <li>
-    <%= unit.videoupload.title %>
   </li>
   <% end %>
 </ul>
