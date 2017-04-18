@@ -1,2 +1,0 @@
-class Fileupload < ApplicationRecord
-end
