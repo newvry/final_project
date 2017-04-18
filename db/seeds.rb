@@ -22,19 +22,45 @@ end
 Lesson.destroy_all
 
 lesson_list = [
-  {"title" => "導覽簡介與認識旅客", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "初級").id},
-  {"title" => "旅程中的溝通與關懷技巧", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "初級").id},
-  {"title" => "旅遊常見問題解決與應對", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "初級").id},
-  {"title" => "歷史", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "中級").id},
-  {"title" => "飲食", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "中級").id},
-  {"title" => "建築", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "中級").id},
-  {"title" => "主題式瀏覽", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "中級").id},
-  {"title" => "生活策展學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "高級").id},
-  {"title" => "演講學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "高級").id},
-  {"title" => "創作應用", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "高級").id}
+  {"title" => "導覽簡介與認識旅客", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Basis Level").id},
+  {"title" => "旅程中的溝通與關懷技巧", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Basis Level").id},
+  {"title" => "旅遊常見問題解決與應對", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Basis Level").id},
+  {"title" => "歷史", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Intermediate Level").id},
+  {"title" => "飲食", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Intermediate Level").id},
+  {"title" => "建築", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Intermediate Level").id},
+  {"title" => "主題式瀏覽", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Intermediate Level").id},
+  {"title" => "生活策展學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Advanced Level").id},
+  {"title" => "演講學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Advanced Level").id},
+  {"title" => "創作應用", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Advanced Level").id}
 ]
 
 lesson_list.each do |lesson|
   Lesson.create( :title => lesson["title"], :description => lesson["description"], :course_id => lesson["course_id"] )
 end
 
+Unit.destroy_all
+
+unit_list = [
+  {"title" => "平溪影片", "description" => "介紹平溪", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id },
+  {"title" => "艋舺影片", "description" => "介紹艋舺", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id },
+  {"title" => "基隆地標影片", "description" => "基隆地標影片", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id }
+]
+
+
+unit_list.each do |unit|
+  Unit.create( :title => unit["title"], :description => unit["description"], :lesson_id => unit["lesson_id"] )
+end
+
+
+Videoupload.destroy_all
+
+videoupload_list = [
+  {"title" => "平溪影片", "description" => "介紹平溪", "unit_id" => Unit.find_by(title: "平溪影片").id, "video" => "https://www.youtube.com/embed/UuWO1ZyJR6o" },
+  {"title" => "艋舺影片", "description" => "介紹艋舺", "unit_id" => Unit.find_by(title: "艋舺影片").id, "video" => "https://www.youtube.com/embed/Stj-mGv9nHI" },
+  {"title" => "基隆地標影片", "description" => "基隆地標影片", "unit_id" => Unit.find_by(title: "基隆地標影片").id, "video" => "https://www.youtube.com/embed/39EOBVsUQXI" }
+]
+
+
+videoupload_list.each do |videoupload|
+  Videoupload.create( :title => videoupload["title"], :description => videoupload["description"], :unit_id => videoupload["unit_id"], :video => videoupload["video"] )
+end
