@@ -41,26 +41,12 @@ end
 Unit.destroy_all
 
 unit_list = [
-  {"title" => "平溪影片", "description" => "介紹平溪", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id },
-  {"title" => "艋舺影片", "description" => "介紹艋舺", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id },
-  {"title" => "基隆地標影片", "description" => "基隆地標影片", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id }
+  {"title" => "平溪影片", "description" => "介紹平溪", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id, "video" => "https://www.youtube.com/embed/UuWO1ZyJR6o" },
+  {"title" => "艋舺影片", "description" => "介紹艋舺", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id, "video" => "https://www.youtube.com/embed/Stj-mGv9nHI" },
+  {"title" => "基隆地標影片", "description" => "基隆地標影片", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id, "video" => "https://www.youtube.com/embed/39EOBVsUQXI"  }
 ]
 
 
 unit_list.each do |unit|
-  Unit.create( :title => unit["title"], :description => unit["description"], :lesson_id => unit["lesson_id"] )
-end
-
-
-Videoupload.destroy_all
-
-videoupload_list = [
-  {"title" => "平溪影片", "description" => "介紹平溪", "unit_id" => Unit.find_by(title: "平溪影片").id, "video" => "https://www.youtube.com/embed/UuWO1ZyJR6o" },
-  {"title" => "艋舺影片", "description" => "介紹艋舺", "unit_id" => Unit.find_by(title: "艋舺影片").id, "video" => "https://www.youtube.com/embed/Stj-mGv9nHI" },
-  {"title" => "基隆地標影片", "description" => "基隆地標影片", "unit_id" => Unit.find_by(title: "基隆地標影片").id, "video" => "https://www.youtube.com/embed/39EOBVsUQXI" }
-]
-
-
-videoupload_list.each do |videoupload|
-  Videoupload.create( :title => videoupload["title"], :description => videoupload["description"], :unit_id => videoupload["unit_id"], :video => videoupload["video"] )
+  Unit.create( :title => unit["title"], :description => unit["description"], :lesson_id => unit["lesson_id"], :video => unit["video"] )
 end
