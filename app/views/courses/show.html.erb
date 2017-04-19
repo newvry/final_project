@@ -12,6 +12,11 @@
         <div class="lessons_box">
           <li><%= lesson.title %></li>
         </div>
+          <% lesson.units.each do |unit| %>
+            <div class="unit_show_box">
+              <li><%= unit.title %></li>
+            </div>
+          <% end %>
       <% end %>
     </ul>
   </div>
