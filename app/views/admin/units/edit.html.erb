@@ -1,0 +1,9 @@
+<h2>Edit unit</h2>
+
+<%= form_for @unit, url: admin_lesson_unit_path(@unit, lesson_id: @lesson) do |f| %>
+  <div class="form-group">
+    <%= render partial: 'form', locals: { f: f } %>
+    <%= f.submit :class => "btn btn-success" %>
+    <%= link_to 'Cancel', admin_lesson_path(@lesson), class: "btn btn-default" %>
+  </div>
+<% end %>

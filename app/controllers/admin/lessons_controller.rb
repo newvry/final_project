@@ -13,6 +13,7 @@ class Admin::LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @course = @lesson.course
     @units = @lesson.units
   end
 

@@ -1,7 +1,10 @@
 class Unit < ApplicationRecord
 
   belongs_to :lesson
-  has_one :videoupload
-  has_one :fileupload
+
+  def change_url
+    a = self.video.split("watch?v=").join("embed/")
+    self.video = a
+  end
 
 end

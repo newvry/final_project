@@ -1,29 +1,24 @@
 <h1>Admin<%= @lesson.title %></h1>
 
 <%= link_to 'Create', new_admin_lesson_unit_path(@lesson), class: 'btn btn-success btn-xs' %>
-<table class="table table-hover text-center">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @units.each do |unit| %>
-      <tr>
-        <td>
-          <%= unit.title %>
-        </td>
-        <td>
-          <%= unit.description %>
-        </td>
-        <td>
-          <%= link_to 'Show', admin_lesson_unit_path(@lesson, unit), class: 'btn btn-success btn-xs' %>
-          <%= link_to 'Edit', edit_admin_lesson_unit_path(@lesson, unit), class: 'btn btn-info btn-xs' %>
-          <%= link_to 'Delete', admin_lesson_unit_path(@lesson, unit), method: :delete, class: 'btn btn-danger btn-xs' %>
-        </td>
-      </tr>
-    <% end %>
-</tbody>
-</table>
+<%= link_to 'Back', admin_course_path(@course), class: 'btn btn-default btn-xs' %>
+<br/>
+<% @units.each do |unit| %>
+  <ul>
+    <li>
+    <div class="row">
+      <div class="col-lg-6">
+          <h3><%= unit.title %></h3>
+          <p><%= unit.description %></p>
+          <div class="unit_btn">
+            <%= link_to 'Edit', edit_admin_lesson_unit_path(@lesson, unit), class: 'btn btn-info btn-xs' %>
+            <%= link_to 'Delete', admin_lesson_unit_path(@lesson, unit), method: :delete, class: 'btn btn-danger btn-xs' %>
+          </div>
+      </div>
+      <div class="col-lg-6">
+        <iframe width="560" height="315" src="<%= unit.video %>" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    </li>
+  </ul>
+<% end %>
