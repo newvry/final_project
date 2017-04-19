@@ -1,0 +1,15 @@
+<h3><%= @lesson.title %></h3>
+
+<div class="col-lg-3">
+  <% @lesson.units.each do |t| %>
+    <%= link_to lesson_unit_path(@lesson, t) do %>
+      <%= t.title %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="col-lg-9">
+  <h4><%= @unit.title %></h4>
+  <p><%= @unit.description %></p>
+  <iframe width="560" height="315" src="<%= @unit.video %>" frameborder="0" allowfullscreen></iframe>
+</div>
