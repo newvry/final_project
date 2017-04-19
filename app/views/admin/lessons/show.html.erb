@@ -1,15 +1,29 @@
 <h1>Admin<%= @lesson.title %></h1>
 
 <%= link_to 'Create', new_admin_lesson_unit_path(@lesson), class: 'btn btn-success btn-xs' %>
-<ul>
-  <% @units.each do |unit| %>
-  <li>
-    <%= unit.title %>
-  </li>
-  <li>
-    <%= unit.description %>
-  </li>
-  <li>
-  </li>
-  <% end %>
-</ul>
+<table class="table table-hover text-center">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @units.each do |unit| %>
+      <tr>
+        <td>
+          <%= unit.title %>
+        </td>
+        <td>
+          <%= unit.description %>
+        </td>
+        <td>
+          <%= link_to 'Show', admin_lesson_unit_path(@lesson, unit), class: 'btn btn-success btn-xs' %>
+          <%= link_to 'Edit', edit_admin_lesson_unit_path(@lesson, unit), class: 'btn btn-info btn-xs' %>
+          <%= link_to 'Delete', admin_lesson_unit_path(@lesson, unit), method: :delete, class: 'btn btn-danger btn-xs' %>
+        </td>
+      </tr>
+    <% end %>
+</tbody>
+</table>
