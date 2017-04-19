@@ -14,6 +14,13 @@ body, html
   margin: 0
   padding: 0
 
+body
+  // background-image: url("https://i.imgur.com/HR0ndVq.jpg")
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  filter: alpha(opacity=50)
+
 h1, p
   transition: .5s
 
@@ -49,6 +56,7 @@ th
   box-shadow: 0px 0px 8px rgba(0,0,0,.5)
 
   transition: .5s
+  background-color: #F6F5F5
   
 
   &:hover
@@ -56,13 +64,13 @@ th
     box-shadow: 0px 0px 10px rgba(0,0,0,.8)
 
   &:hover h1
-    transform: scale(1.5)
+    transform: scale(1.05)
 
   &:hover p
-    transform: scale(1.5)
+    transform: scale(1.2)
   
   &:hover .course_info
-    transform: scale(1.2)
+    transform: scale(1.1)
 
 .index_intro
   margin-top: 40%
@@ -81,17 +89,40 @@ th
 // course show setting=================================
 
 .course_left_pannel
+  border-right: solid 2px
+  height: 40vh 
+
+
+.course_right_pannel
+
+  ul
+    margin-top: 30px
 
 
 .course_show_box
   border: solid 1px
-  display: inline-flex
+  margin: auto
   padding: 10px 30px
 
 .lessons_box
   border: solid 1px
   display: inline-flex
   padding: 10px 30px
+
+.unit_show_box
+  border: solid 1px
+
+  margin: 20px 10px
+  padding: 10px 20px
+
+
+
+
+
+
+
+
+
 
 footer
   height: 100px
