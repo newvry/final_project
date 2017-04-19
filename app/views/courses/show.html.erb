@@ -1,23 +1,29 @@
 <div class="row">
-  <div class="col-lg-3 course_left_pannel">
-
+  <div class="col-sm-3 course_left_pannel">
+    <h2>Guide list</h2>
   </div>
 
-  <div class="col-lg-9 course_right_pannel">
+  <div class="col-sm-9 course_right_pannel text-center">
     <div class="course_show_box">
       <h4><%= @course.title %></h4>
     </div>
     <ul>
-      <% @lessons.each do |lesson| %>
-        <div class="lessons_box">
-          <li><%= lesson.title %></li>
-        </div>
-          <% lesson.units.each do |unit| %>
-            <div class="unit_show_box">
-              <li><%= unit.title %></li>
+      <div class="row">
+        <% @lessons.each do |lesson| %>
+          <div class="col-sm-4">
+            <div class="lessons_box">
+              <li><%= lesson.title %></li>
             </div>
-          <% end %>
-      <% end %>
+            <% lesson.units.each do |unit| %>
+              <div class="unit_show_box">
+                <%= link_to lesson_unit_path(lesson, unit) do %>
+                  <li class="text-center"><%= unit.title %></li>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+       <% end %>
+      </div>
     </ul>
   </div>
 </div>
