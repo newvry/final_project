@@ -5,7 +5,7 @@ lock "3.8.0"
 set :application, 'final_project'
 
 set :repo_url, 'git@github.com:newvry/final_project.git'
-set :deploy_to, '/home/eason/final_project'
+set :deploy_to, '/home/Eason/final_project'
 set :keep_releases, 5
 
 append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/application.yml'
