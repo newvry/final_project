@@ -23,6 +23,7 @@ class Admin::UnitsController < ApplicationController
 
   def update
     if @unit.update(unit_params)
+      @unit.change_url
       redirect_to admin_lesson_path(@lesson)
     else
       render :edit

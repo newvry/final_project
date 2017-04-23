@@ -12,7 +12,7 @@
           <p><%= unit.description %></p>
           <div class="unit_btn">
             <%= link_to 'Edit', edit_admin_lesson_unit_path(@lesson, unit), class: 'btn btn-info btn-xs' %>
-            <%= link_to 'Delete', admin_lesson_unit_path(@lesson, unit), method: :delete, class: 'btn btn-danger btn-xs' %>
+            <%= link_to 'Delete', admin_lesson_unit_path(@lesson, unit), method: :delete, data: { confirm: "Delete " + unit.title + " ?" }, class: 'btn btn-danger btn-xs' %>
           </div>
       </div>
       <div class="col-lg-6">

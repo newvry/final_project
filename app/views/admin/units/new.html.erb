@@ -3,6 +3,7 @@
 <%= form_for @unit, url: admin_lesson_units_path do |f| %>
   <div class="form-group">
     <%= render partial: 'form', locals: { f: f } %>
-    <%= f.submit :class => "btn btn-default" %>
+    <%= f.submit :class => "btn btn-primary btn-xs" %>
+    <%= link_to 'Back', :back, class: "btn btn-default btn-xs" %>
   </div>
 <% end %>

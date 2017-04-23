@@ -16,7 +16,7 @@
       </td>
       <td><%= course.description %></td>
       <td>
-        <%= link_to 'EDIT', edit_admin_course_path(course), class: "btn btn-primary btn-xs" %>
+        <%= link_to 'EDIT', edit_admin_course_path(course), class: "btn btn-info btn-xs" %>
         <%= link_to 'DEL', admin_course_path(course), method: :delete, 
                       data: {confirm: 'Destroy 【' + course.title +  '】 ?' }, class: "btn btn-danger btn-xs" %>
       </td>
