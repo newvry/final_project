@@ -19,25 +19,37 @@
           </ul>
           
           <ul class="nav navbar-nav navbar-right">
-          <li>
-            <% if current_user %>
-              <% if current_user.profile.nil? %>
-                <li><%= link_to "Profile", new_user_path %></li>  
-              <% else %>
-                <li><%= link_to "Profile", user_path(:id) %></li>
-              <% end %>
-            <% end %>
-          </li>
-           <% if current_user %>
-              <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
-              <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
+            <li>
               <% if current_user.role == 'admin' %>
                 <li><%= link_to('管理後台', admin_courses_path) %></li>
               <% end %>
-            <% else %>
-              <li><%= link_to '註冊', new_registration_path(:user), :class => "glyphicon glyphicon-log-in" %></li>
-              <li><%= link_to '登入', new_session_path(:user), :class => "glyphicon glyphicon-user" %></li>
-            <% end %>
+            </li>
+            <li class="dropdown">
+              <% if current_user %>
+                <a class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                Hi, <%= current_user.email %>
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <% if current_user.profile.nil? %>
+                      <li><%= link_to "Profile", new_user_profile_path(current_user) %></li>  
+                    <% else %>
+                      <li><%= link_to "Profile", user_profile_path(current_user, :id) %></li>
+                    <% end %>
+
+                    <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
+                    <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+
+                  <% else %>
+
+                    <li><%= link_to '註冊', new_registration_path(:user), :class => "glyphicon glyphicon-log-in" %></li>
+                    <li><%= link_to '登入', new_session_path(:user), :class => "glyphicon glyphicon-user" %></li>
+
+                  <% end %>
+                </ul>
+
+
+
+            </li>
           </ul>
         </div>
       </nav>
