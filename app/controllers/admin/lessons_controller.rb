@@ -22,8 +22,7 @@ class Admin::LessonsController < ApplicationController
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
-    @lesson.course_id = @course.id
+    @lesson = @course.lessons.new(lesson_params)
     if @lesson.save
       redirect_to admin_course_path(@course)
     else
