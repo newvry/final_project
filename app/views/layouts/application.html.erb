@@ -20,8 +20,10 @@
           
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <% if current_user.role == 'admin' %>
-                <li><%= link_to('管理後台', admin_courses_path) %></li>
+              <% if current_user %>
+                <% if current_user.role == 'admin' %>
+                  <li><%= link_to('管理後台', admin_courses_path) %></li>
+                <% end %>
               <% end %>
             </li>
             <li class="dropdown">
