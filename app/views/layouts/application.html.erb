@@ -24,7 +24,6 @@
               <% end %>
             </li>
             <li class="dropdown">
-
               <% if current_user %>
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                   <div class="profile">
@@ -41,10 +40,8 @@
                   <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
                 </ul>
               <% else %>
-                <div class="login">
                   <li><%= link_to '註冊', new_registration_path(:user), :class => "glyphicon glyphicon-log-in" %></li>
                   <li><%= link_to '登入', new_session_path(:user), :class => "glyphicon glyphicon-user" %></li>
-                </div>
               <% end %>
 
             </li>
