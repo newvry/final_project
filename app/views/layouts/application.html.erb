@@ -29,7 +29,9 @@
             <li class="dropdown">
               <% if current_user %>
                 <a class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
-                Hi, <%= current_user.email %>
+                  <div class="profile">
+                    <%= image_tag current_user.profile.image_url(:profile) %>
+                  </div>
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <% if current_user.profile.nil? %>

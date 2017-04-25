@@ -2,6 +2,8 @@
 <h1><%= @profile.name %>的個人簡介</h1>
 current level：<%= @profile.level %>
 自我介紹：<%= @profile.intro %>
-<%= image_tag @profile.image.url %>
-
+<div class="picture">
+  <%= image_tag @profile.image_url(:thumb) %>
+</div>
 <%= link_to 'Edit', edit_user_profile_path(current_user, id: @profile) %>
+

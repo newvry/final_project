@@ -2,7 +2,23 @@ class PhotoImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
+
+  process resize_to_fit: [800, 800] #圖片上傳後，自動切成你要的size
+
+
+  version :thumb do #設同時切其他size的版本-thumb
+    process resize_to_fill: [200,200]
+  end
+
+  version :medium do #設同時切其他size的版本-medium
+    process resize_to_fill: [100,100]
+  end
+
+  version :profile do #設同時切其他size的版本-medium
+    process resize_to_fill: [60,60]
+  end
+
 
   # Choose what kind of storage to use for this uploader:
   storage :file
