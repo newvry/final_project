@@ -9,59 +9,53 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-inverse">
-        <div class="container">
+      <nav class="navbar navbar-default">
+
           <div class="navbar-header">
             <a class="navbar-brand" href="/">My Taiwan tour</a>
           </div>
-          <ul class="nav navbar-nav">
-            
-          </ul>
           
           <ul class="nav navbar-nav navbar-right">
             <li>
               <% if current_user %>
                 <% if current_user.role == 'admin' %>
-                  <li><%= link_to('管理後台', admin_courses_path) %></li>
+                  <li class="admin_btn"><%= link_to('管理後台', admin_courses_path) %></li>
                 <% end %>
               <% end %>
             </li>
             <li class="dropdown">
+
               <% if current_user %>
-                <a class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                   <div class="profile">
                     <%= image_tag current_user.profile.image_url(:profile) %>
                   </div>
-                <span class="caret"></span></a>
+                <%#<span class="text-center caret"></span></a>%>
                 <ul class="dropdown-menu">
-                    <% if current_user.profile.nil? %>
-                      <li><%= link_to "Profile", new_user_profile_path(current_user) %></li>  
-                    <% else %>
-                      <li><%= link_to "Profile", user_profile_path(current_user, :id) %></li>
-                    <% end %>
-
-                    <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
-                    <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
-
+                  <% if current_user.profile.nil? %>
+                    <li><%= link_to "Profile", new_user_profile_path(current_user) %></li>  
                   <% else %>
-
-                    <li><%= link_to '註冊', new_registration_path(:user), :class => "glyphicon glyphicon-log-in" %></li>
-                    <li><%= link_to '登入', new_session_path(:user), :class => "glyphicon glyphicon-user" %></li>
-
+                    <li><%= link_to "Profile", user_profile_path(current_user, :id) %></li>
                   <% end %>
+                  <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
+                  <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
                 </ul>
-
-
+              <% else %>
+                <div class="login">
+                  <li><%= link_to '註冊', new_registration_path(:user), :class => "glyphicon glyphicon-log-in" %></li>
+                  <li><%= link_to '登入', new_session_path(:user), :class => "glyphicon glyphicon-user" %></li>
+                </div>
+              <% end %>
 
             </li>
           </ul>
-        </div>
+
       </nav>
-      <div class="container">
+
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
-    </div>
+
     <footer style="margin-top: 100px;">
       <div class="container">
         <p class="text-center">Copyright ©2017 Alpha Camp
