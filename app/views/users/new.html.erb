@@ -1,0 +1,9 @@
+<h2>Create profile</h2>
+
+<%= form_for @user, url: users_path, method: :post do |f| %>
+  <div class="form-group">
+    <%= render partial: 'form', locals: { f: f } %>
+    <%= f.submit :class => "btn btn-primary btn-xs" %>
+    <%= link_to 'Back', :back, class: "btn btn-default btn-xs" %>
+  </div>
+<% end %>
