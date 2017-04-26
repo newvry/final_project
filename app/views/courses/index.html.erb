@@ -4,7 +4,7 @@
 <ul class="courses_list">
   <div class="row">
     <% @courses.each do |course| %>
-      <%= link_to course_path(course) do %>
+      <%= link_to course_path(course, lesson: course.lessons.first) do %>
         <div class="col-sm-4">
           <div class="course_box course_<%= course.id %>">
               <li class="text-center">

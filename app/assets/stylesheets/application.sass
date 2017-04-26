@@ -5,6 +5,12 @@
 
 // regular setting=====================================
 
+$color_blue_theme: #4DA1FF
+$color_powderblue_bg: #F4F8F9
+
+
+
+
 *
   // border: solid 1px
   box-sizing: border-box
@@ -13,13 +19,7 @@ body, html
   // height: 100vh
   margin: 0
   padding: 0
-
-body
-  // background-image: url("https://i.imgur.com/HR0ndVq.jpg")
-  background-size: cover
-  background-position: center
-  background-repeat: no-repeat
-  filter: alpha(opacity=50)
+  background-color: $color_powderblue_bg
 
 h1, p
   transition: .5s
@@ -42,10 +42,20 @@ th
   height: 97px
 
 .navbar-left
-  margin-top: 20.5px
+  // margin-top: 20.5px
+  
 
   li
     margin-left: 10px
+    padding-top: 20.5px
+    padding-bottom: 16.5px
+    border-bottom: solid 4px #f7f7f7
+    transition: .2s
+    a
+      color: $color_blue_theme !important
+
+    &:hover
+      border-bottom: solid 4px $color_blue_theme
 
 .navbar-brand
   height: 97px
@@ -124,9 +134,23 @@ th
 
 // course show setting=================================
 
+.course_left_pannel
 
 
 
+
+// unit show setting===================================
+
+
+
+#next_btn
+  transition: .2s
+
+.forbid
+  border: solid 1px grey
+  background-color: #eee
+  color: grey
+  cursor: not-allowed
 
 
 

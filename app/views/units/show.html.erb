@@ -1,15 +1,30 @@
 <h3><%= @lesson.title %></h3>
+<hr>
 
-<div class="col-lg-3">
-  <% @lesson.units.each do |t| %>
-    <%= link_to lesson_unit_path(@lesson, t) do %>
-      <%= t.title %>
+<%= link_to 'Back', course_path(@course, lesson: @course.lessons.first), class: "btn btn-default btn-xs" %>
+
+<div class="row">
+  <div class="col-lg-3 unit_left_pannel">
+    <% @lesson.units.each do |t| %>
+      <%= link_to lesson_unit_path(@lesson, t) do %>
+        <%= t.title %><br>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
+  <div class="col-lg-9 unit_left_pannel">
+    <h4><%= @unit.title %></h4>
+    <p><%= @unit.description %></p>
+    <iframe width="560" height="315" src="<%= @unit.video %>" frameborder="0" allowfullscreen></iframe>
+    <br>
+    <a href="#" class="forbid btn btn-xs" id="next_btn">NEXT</a>
+  </div>
 </div>
 
-<div class="col-lg-9">
-  <h4><%= @unit.title %></h4>
-  <p><%= @unit.description %></p>
-  <iframe width="560" height="315" src="<%= @unit.video %>" frameborder="0" allowfullscreen></iframe>
-</div>
+
+<script>
+  (setTimeout(function() {
+  $('#next_btn').removeClass('forbid')
+  $('#next_btn').addClass('btn-primary')
+}, 3000))()
+</script>

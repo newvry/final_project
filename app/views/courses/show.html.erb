@@ -1,29 +1,32 @@
+<div class="course_show_box">
+  <h2><%= @course.title %></h2>
+</div>
+
+<%= link_to 'Back', courses_path, class: "btn btn-default btn-xs" %>
+
+<hr>
+
 <div class="row">
   <div class="col-sm-3 course_left_pannel">
-    <h2>Guide list</h2>
+    <h2>Lessons</h2>
+    <hr>
+    <% @lessons.each do |lesson| %>
+      <div class="lessons_box">
+        <%= link_to course_path(@course, lesson: lesson) do %>
+          <li><%= lesson.title %></li>
+        <% end %>
+      </div>
+    <% end %>
+
   </div>
 
-  <div class="col-sm-9 course_right_pannel text-center">
-    <div class="course_show_box">
-      <h4><%= @course.title %></h4>
-    </div>
+  <div class="col-sm-9 course_right_pannel">
     <ul>
-      <div class="row">
-        <% @lessons.each do |lesson| %>
-          <div class="col-sm-4">
-            <div class="lessons_box">
-              <li><%= lesson.title %></li>
-            </div>
-            <% lesson.units.each do |unit| %>
-              <div class="unit_show_box">
-                <%= link_to lesson_unit_path(lesson, unit) do %>
-                  <li class="text-center"><%= unit.title %></li>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-       <% end %>
-      </div>
+      <% @lesson.units.each do |unit| %>
+        <%= link_to lesson_unit_path(@lesson, unit) do %>
+          <%= unit.title %><br>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>

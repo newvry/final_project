@@ -9,70 +9,13 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/">
-              <img src="https://i.imgur.com/qKPV3UQ.png" height="60px" />
-            </a>
-          </div>
-
-          <ul class="nav navbar-nav navbar-left">
-            <li><a class="fa fa-clone fa-2x" href="#"></a></li>
-            <li><a class="fa fa-users fa-2x" href="<%= trainees_users_path %>"></a></li>
-            <li><a class="fa fa-user-o fa-2x" href="#"></a></li>
-            <li><a class="fa fa-file-text-o fa-2x" href="#"></a></li>
-          </ul>
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <% if current_user %>
-                <% if current_user.role == 'admin' %>
-                  <li class="admin_btn"><%= link_to('管理後台', admin_courses_path) %></li>
-                <% end %>
-              <% end %>
-            </li>
-            <li class="dropdown">
-              <% if current_user %>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                  <div class="profile">
-                    <% if current_user.profile.nil? %>
-                      <img src="http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1" alt="avatar" height="60px">
-                    <% else %>
-                      <%= image_tag current_user.profile.image_url(:profile) %>  
-                    <% end %>
-                    
-                  </div>
-                <%#<span class="text-center caret"></span></a>%>
-                <ul class="dropdown-menu">
-                  <% if current_user.profile.nil? %>
-                    <li><%= link_to "Profile", new_user_profile_path(current_user) %></li>  
-                  <% else %>
-                    <li><%= link_to "Profile", user_profile_path(current_user, :id) %></li>
-                  <% end %>
-                  <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
-                  <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
-                </ul>
-              <% else %>
-                  <li><%= link_to '註冊', new_registration_path(:user), :class => "glyphicon glyphicon-log-in" %></li>
-                  <li><%= link_to '登入', new_session_path(:user), :class => "glyphicon glyphicon-user" %></li>
-              <% end %>
-
-            </li>
-          </ul>
-      </div>
-      </nav>
+      <%= render "common/navbar" %>
       <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
       </div>  
-    <footer style="margin-top: 100px;">
-      <div class="container">
-        <p class="text-center">Copyright ©2017 Alpha Camp
-          <br>Design by
-        </p>
-    </footer>
+      <%= render "common/footer" %>
     </div>
   </body>
 </html>
