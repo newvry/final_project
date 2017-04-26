@@ -28,18 +28,18 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 
                   <div class="profile">
-                    <% if current_user.profile.nil? %>
-                      <img src="http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1" alt="avatar" height="60px">
+                    <% if current_user.image.present? %>
+                      <%= image_tag current_user.image_url(:profile) %>  
                     <% else %>
-                      <%= image_tag current_user.profile.image_url(:profile) %>  
+                      <img src="http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1" alt="avatar" height="60px">
                     <% end %>
                   </div>
 
                 <ul class="dropdown-menu">
-                  <% if current_user.profile.nil? %>
-                    <li><%= link_to "Profile", new_user_profile_path(current_user) %></li>  
+                  <% if current_user.name.nil? %>
+                    <li><%= link_to "Profile", edit_user_path(current_user) %></li>
                   <% else %>
-                    <li><%= link_to "Profile", user_profile_path(current_user, :id) %></li>
+                    <li><%= link_to 'Profile', user_path(current_user) %></li>
                   <% end %>
                   <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
                   <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
