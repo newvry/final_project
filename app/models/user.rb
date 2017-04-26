@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
   
+  mount_uploader :image, PhotoImageUploader
   has_one :profile       
 
     def admin?
