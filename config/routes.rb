@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   
   resources :users do
     resources :profiles
+    collection do
+      get :trainees
+    end
   end
   
   resources :courses

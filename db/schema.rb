@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424074652) do
+ActiveRecord::Schema.define(version: 20170426034832) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"
@@ -35,13 +35,23 @@ ActiveRecord::Schema.define(version: 20170424074652) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "image"
+    t.string   "image",      default: "/assets/images/default.png"
     t.string   "name"
     t.string   "level",      default: "Entry Level"
     t.text     "intro"
     t.integer  "user_id"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+  end
+
+  create_table "unit_finisheds", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "unit_id"
+    t.datetime "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unit_id"], name: "index_unit_finisheds_on_unit_id"
+    t.index ["user_id"], name: "index_unit_finisheds_on_user_id"
   end
 
   create_table "units", force: :cascade do |t|

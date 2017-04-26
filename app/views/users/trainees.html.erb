@@ -1,0 +1,22 @@
+<h1>Trainees</h1>
+
+<%# current_user file %>
+
+<div class="row">
+  <div class="col-sm-12">
+    
+    <%= current_user.email %>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <% @trainees.each do |trainee| %>
+    <div class="col-sm-4">
+      
+      <%= trainee.email %>
+    </div>
+  <% end %>
+</div>
+
+
+<%# all trainees except current_user profile %>
