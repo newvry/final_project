@@ -6,7 +6,10 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook]
   
   mount_uploader :image, PhotoImageUploader
-  has_one :profile       
+
+  has_one :profile
+  has_many :unit_completeds
+  has_many :units, through: :unit_completed
 
     def admin?
       self.role == "admin"

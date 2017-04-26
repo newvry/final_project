@@ -1,15 +1,4 @@
 class UsersController < ApplicationController
-
-
-  def create
-    byebug
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to user_path(@user)
-    else
-      render courses_path
-    end
-  end
     
   def show
     @user = current_user

@@ -17,14 +17,23 @@
     <p><%= @unit.description %></p>
     <iframe width="560" height="315" src="<%= @unit.video %>" frameborder="0" allowfullscreen></iframe>
     <br>
-    <a href="#" class="forbid btn btn-xs" id="next_btn">NEXT</a>
+
+    <%= link_to("Previous", lesson_unit_path(@lesson, @unit.previous_unit)) if @unit.previous_unit %>
+    <%= link_to("Next", lesson_unit_path(@lesson, @unit.next_unit), class: "forbid btn btn-xs", id: "next_btn") if @unit.next_unit %>
   </div>
 </div>
 
 
 <script>
-  (setTimeout(function() {
-  $('#next_btn').removeClass('forbid')
-  $('#next_btn').addClass('btn-primary')
-}, 3000))()
+  if( @unit.unit_completeds.where(user_id: current_user) === null ){
+
+
+    (setTimeout(function() {
+      $('#next_btn').removeClass('forbid')
+      $('#next_btn').addClass('btn-primary')
+    }, 10000))()
+    
+  }
+
+
 </script>
