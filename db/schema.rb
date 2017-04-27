@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426042216) do
+ActiveRecord::Schema.define(version: 20170427103635) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"
@@ -56,19 +56,19 @@ ActiveRecord::Schema.define(version: 20170426042216) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",            null: false
-    t.string   "encrypted_password",     default: "",            null: false
+    t.string   "email",                  default: "",                                                                                                               null: false
+    t.string   "encrypted_password",     default: "",                                                                                                               null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,             null: false
+    t.integer  "sign_in_count",          default: 0,                                                                                                                null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.string   "image"
+    t.datetime "created_at",                                                                                                                                        null: false
+    t.datetime "updated_at",                                                                                                                                        null: false
+    t.string   "image",                  default: "http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1"
     t.string   "fb_uid"
     t.string   "fb_token"
     t.string   "role"
