@@ -16,16 +16,24 @@ class Unit < ApplicationRecord
   end
 
   def next_unit
+    self.mark_completed
     @lesson = self.lesson
     @lesson.units.where("id > ?", self.id).first
 
-    # self.mark_completed
   end
 
-  # def mark_completed
-  #   self.completed = DateTime.now
-  #   self.completed.user_id = current_user
-  #   self.completed.save
-  # end
+  def not_first
+    @lesson = self.lesson
+    self != @lesson.units.first
+  end
 
+  def not_last
+    @lesson = self.lesson
+    self != @lesson.units.last
+  end
+
+  def mark_completed
+    # UnitCompleted.create(user_id: , unit_id: self.id, completed: DateTime.now) if UnitCompleted.where(user_id: 3, unit_id: self.id).empty?
+
+  end
 end

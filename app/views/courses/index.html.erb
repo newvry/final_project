@@ -1,32 +1,21 @@
-<div class="container">
-<h1 class="text-center">Tutorial</h1>
-
-<ul class="courses_list">
-  <div class="row">
-    <% @courses.each do |course| %>
-      <%= link_to course_path(course, lesson: course.lessons.first) do %>
-        <div class="col-sm-4">
-          <div class="course_box course_<%= course.id %>">
-              <li class="text-center">
-                <div class="index_intro">
-                  <h1><%= course.title %></h1>
-                  <p><%= course.description %></p>
-                </div>
-                <div class="course_info text-muted">
-                  <div class="total_hours"><span>Total Hours : 30 hrs</span></div>
-                  <div class="total_progress">
-                    <div class="fa fa-star"></div>
-                    <div class="fa fa-star"></div>
-                    <div class="fa fa-star"></div>
-                    <div class="fa fa-star"></div>
-                    <div class="fa fa-star"></div>
+  <ul class="courses_list">
+    <div class="row">
+      <% @courses.each do |course| %>
+        <%= link_to course_path(course, lesson: course.lessons.first) do %>
+          <div class="col-sm-4">
+            <div class="course_box course_<%= course.id %>">
+                <li class="text-center">
+                  <div class="index_intro">
+                    <h2><%= course.title %></h2>
+                    <p><%= course.description %></p>
                   </div>
-                </div>
-              </li>
+                  <div class="course_info text-muted">
+                    <div class="total_hours"><span>Total Hours : 30 hrs</span></div>
+                  </div>
+                </li>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-</ul>
-</div>
+    </div>
+  </ul>
