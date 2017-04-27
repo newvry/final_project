@@ -18,8 +18,8 @@
     <iframe width="560" height="315" src="<%= @unit.video %>" frameborder="0" allowfullscreen></iframe>
     <br>
 
-    <%= link_to("Previous", lesson_unit_path(@lesson, @unit.previous_unit), class: "btn btn-primary btn-xs") if @unit.not_first %>
-    <%= link_to("Next", lesson_unit_path(@lesson, @unit.next_unit), class: "forbid btn btn-xs", id: "next_btn") if @unit.not_last %>
+    <%= link_to("Previous", lesson_unit_previous_unit_path(@lesson, unit_id: @unit), class: "btn btn-primary btn-xs") if @unit.not_first %>
+    <%= link_to("Next", lesson_unit_next_unit_path(@lesson, unit_id: @unit), class: "forbid btn btn-xs", id: "next_btn") if @unit.not_last %>
   </div>
 </div>
 

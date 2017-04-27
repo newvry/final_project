@@ -19,3 +19,18 @@
       <% end %>
     </div>
   </ul>
+
+
+
+  <script>
+
+
+    <% if current_user.level === "Entry Level" %>
+      $('.course_<%= @courses.second.id %> ').closest("a").preventDefault()
+      $('.course_<%= @courses.last.id %> ').preventDefault()
+      
+    <% else %>
+      
+    <% end %>
+  
+  </script>
