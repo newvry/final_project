@@ -25,10 +25,11 @@ class UnitsController < ApplicationController
   end
 
   def mark_completed(unit)
-    UnitCompleted.create(user_id: current_user , 
+    UnitCompleted.create(user_id: current_user.id , 
                          unit_id: unit.id, 
                          completed: DateTime.now) if UnitCompleted.where(user_id: current_user, 
                                                                          unit_id: unit.id).empty?
+
   end
 
 end
