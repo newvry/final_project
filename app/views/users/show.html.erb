@@ -1,7 +1,7 @@
-<h1><%= @user.name %>的個人簡介</h1>
-current level：<%= @user.level %>
-自我介紹：<%= @user.intro %>
+<h1><%=current_user.name %>的個人簡介</h1>
+current level：<%=current_user.level %>
+自我介紹：<%=current_user.intro %>
 <div class="picture">
-    <%= image_tag @user.image_url(:thumb) %>
+    <%= image_tag current_user.image_url(:thumb) %>
 </div>
-<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Edit', edit_user_path(current_user) %>
