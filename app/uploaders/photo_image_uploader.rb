@@ -16,7 +16,7 @@ class PhotoImageUploader < CarrierWave::Uploader::Base
   end
 
   version :medium do #設同時切其他size的版本-medium
-    process resize_to_fill: [100,100]
+    process resize_to_fill: [150,150]
   end
 
   version :profile do #設同時切其他size的版本-medium
