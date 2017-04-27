@@ -9,7 +9,11 @@
           <ul class="nav navbar-nav navbar-left">
             <li><a class="fa fa-clone fa-2x" href="/"></a></li>
             <% if current_user %>
-              <li><a class="fa fa-users fa-2x" href="<%= trainees_users_path %>"></a></li>
+              <% if current_user.name.nil? %>
+                <li><a class="fa fa-users fa-2x" href="<%= edit_user_path(current_user) %>"></a></li>
+              <% else %>
+                <li><a class="fa fa-users fa-2x" href="<%= trainees_users_path %>"></a></li>
+              <% end %>
             <% end %>
             <li><a class="fa fa-user-o fa-2x" href="#"></a></li>
             <li><a class="fa fa-file-text-o fa-2x" href="#"></a></li>
