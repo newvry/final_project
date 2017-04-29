@@ -2,20 +2,60 @@
     <div class="row">
       <% @courses.each do |course| %>
         <%= link_to course_path(course, lesson: course.lessons.first) do %>
-          <div class="col-sm-4">
-            <div class="course_box course_<%= course.id %>">
-                <li class="text-center">
-                  <div class="index_intro">
-                    <h2><%= course.title %></h2>
-                    <p><%= course.description %></p>
-                  </div>
-                  <div class="course_info text-muted">
-                    <div class="total_hours"><span>Total Hours : 30 hrs</span></div>
-                  </div>
-                </li>
+          <div class="col-sm-4 ">
+            <div class="course_box" id="course_<%= course.id %>">
+              <li class="text-center">
+                <div class="index_intro">
+                  <h2><%= course.title %></h2>
+                </div>
+                <div class="course_info text-muted">
+                  <div class="total_hours"><span>Total Hours : 30 hrs</span></div>
+                </div>
+                <i class="access"></i>
+              </li>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
   </ul>
+
+  <script>
+
+    <% if current_user %>
+
+      <% if current_user.level == "Entry Level" %>
+        $("#course_<%= @courses.first.id %>").find("i").addClass("fa fa-unlock-alt fa-3x")
+
+        $("#course_<%= @courses.second.id %>, #course_<%= @courses.last.id %>").closest("a").click(function(e){
+          e.preventDefault()
+        })
+
+        $("#course_<%= @courses.last.id %>, #course_<%= @courses.second.id %>").find("i").addClass("fa fa-lock fa-3x")
+
+      <% elsif current_user.level == "Medium Level" %>
+        $("#course_<%= @courses.first.id %>").find("i").addClass("fa fa-unlock-alt fa-3x")
+
+        $("#course_<%= @courses.second.id %>").find("i").addClass("fa fa-unlock-alt fa-3x")
+
+        $("#course_<%= @courses.last.id %>").closest("a").click(function(e){
+          e.preventDefault()
+        })
+        $("#course_<%= @courses.last.id %>").find("i").addClass("fa fa-lock fa-3x")
+      
+      <% else %>
+        $("#course_<%= @courses.first.id %>, #course_<%= @courses.second.id %>, #course_<%= @courses.last.id %>").find("i").addClass("fa fa-unlock-alt fa-3x")
+      
+      <% end %>
+
+    <% else %>
+      $(".access").addClass("fa fa-lock fa-3x")
+      $(".row").find("a").click(function(e){
+        e.preventDefault()
+      })
+
+    <% end %>
+
+    
+  
+  </script>

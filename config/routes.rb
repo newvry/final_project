@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   resources :courses
 
   resources :lessons do
-    resources :units
+    resources :units do
+      get :previous_unit
+      get :next_unit
+    end
   end
 
   namespace :admin do

@@ -10,17 +10,18 @@
   <div class="col-sm-3 course_left_pannel">
     <h2>Lessons</h2>
     <hr>
-    <% @lessons.each do |lesson| %>
-      <div class="lessons_box">
-        <%= link_to course_path(@course, lesson: lesson) do %>
-          <li><%= lesson.title %></li>
-        <% end %>
-      </div>
-    <% end %>
-
+    <ul>
+      <% @lessons.each do |lesson| %>
+        <div class="lessons_box">
+          <%= link_to course_path(@course, lesson: lesson) do %>
+            <li><%= lesson.title %></li>
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
   </div>
 
-  <div class="col-sm-9 course_right_pannel">
+  <div class="col-sm-9 course_right_pannel"> 
     <ul>
       <% @lesson.units.each do |unit| %>
         <%= link_to lesson_unit_path(@lesson, unit) do %>
