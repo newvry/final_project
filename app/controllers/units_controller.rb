@@ -23,7 +23,7 @@ class UnitsController < ApplicationController
     @next_unit = @lesson.units.where("id > ?", @unit.id).first
     redirect_to lesson_unit_path(@lesson, @next_unit)
   end
-
+ 
   def mark_completed(unit)
     UnitCompleted.create(user_id: current_user.id , 
                          unit_id: unit.id, 

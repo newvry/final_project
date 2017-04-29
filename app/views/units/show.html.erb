@@ -26,14 +26,17 @@
 
 <script>
 
-  <% if UnitCompleted.where(unit_id: @unit, user_id: current_user).empty? %>
-    setTimeout(function() {
-      $('#next_btn').removeClass('forbid')
-      $('#next_btn').addClass('btn-primary')
-    }, 5000)
+      <% if UnitCompleted.where(unit_id: @unit, user_id: current_user).empty? %>
 
-  <% else %>
+        setTimeout(function() {
+          $('#next_btn').removeClass('forbid')
+          $('#next_btn').addClass('btn-primary')
+        }, 5000)
 
-   
-  <% end %>
+      <% else %>
+        $('#next_btn').removeClass('forbid')
+        $('#next_btn').addClass('btn-primary')
+
+      <% end %>
+
 </script>

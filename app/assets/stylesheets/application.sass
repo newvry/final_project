@@ -7,8 +7,12 @@
 
 // regular setting=====================================
 
-$color_blue_theme: #4DA1FF
+$color_picton_blue: #4DA1FF
 $color_powderblue_bg: #F4F8F9
+$color_white: #F7F7F7
+$color_cerulean: #007EA7
+$color_prussianblue: #003459
+
 
 
 
@@ -24,6 +28,9 @@ body, html
 
 h1, p
   transition: .5s
+
+h2
+  margin-top: 10px
 
 ul
   list-style-type: none
@@ -51,10 +58,10 @@ th
     border-bottom: solid 4px #f7f7f7
     transition: .2s
     a
-      color: $color_blue_theme !important
+      color: $color_picton_blue !important
 
     &:hover
-      border-bottom: solid 4px $color_blue_theme
+      border-bottom: solid 4px $color_picton_blue
 
 .navbar-brand
   height: 97px
@@ -62,13 +69,13 @@ th
 .login
   margin-top: 23px
 
-// .profile
-//   text-align: center
-//   // border: 1px solid
-//   border-radius: 50%
-//   width: 60px
-//   height: 60px
-//   overflow: hidden
+.profile
+  text-align: center
+  // border: 1px solid
+  border-radius: 50%
+  width: 60px
+  height: 60px
+  overflow: hidden
 
 
 // profile page setting ==============================
@@ -96,14 +103,12 @@ th
     width: 100%
     margin-right: 0
     margin-left: 0
-  
-   
 
   a
-  &:hover, &:active, &:link, &:visited
-    color: black
-    background-color: transparent
-    text-decoration: none
+    &:hover, &:active, &:link, &:visited
+      color: black
+      background-color: transparent
+      text-decoration: none
 
 .course_box
   height: 60vh
@@ -132,7 +137,7 @@ th
     transform: scale(1.1)
 
 .index_intro
-  margin-top: 40%
+  margin-top: 15%
 
 .row
   width: 95%
@@ -140,8 +145,11 @@ th
 
 .course_info
   // position: absolute
-  margin-top: 50px
+  margin-top: 20px
   transition: .5s
+
+.access
+  margin-top: 120px
 
 
 
