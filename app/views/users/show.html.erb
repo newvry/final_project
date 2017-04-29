@@ -1,7 +1,15 @@
 <h1><%=current_user.name %>的個人簡介</h1>
-current level：<%=current_user.level %>
-自我介紹：<%=current_user.intro %>
 <div class="picture">
-    <%= image_tag current_user.image_url(:thumb) %>
+	<% if current_user.image.present? %>
+		<%= image_tag current_user.image_url(:thumb) %> 
+  <% else %>
+     <img src="http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1" alt="avatar" height="200" width="200">
+   <% end %>
 </div>
+      <ul>
+        <li>信箱：<%= current_user.email %></li>
+        <li>手機：<%= current_user.mobile_phone %></li>
+        <li>學習階段：<%= current_user.level %></li>
+        <li>自我介紹：<%= current_user.intro %></li>
+      </ul>
 <%= link_to 'Edit', edit_user_path(current_user) %>
