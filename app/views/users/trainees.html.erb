@@ -1,46 +1,88 @@
-<div class="text-center">
-<h1>Trainees</h1>
 
 <%# current_user file %>
 
 <div id="current_user" class="row">
   <div class="col-sm-12">
-    <div class="col-sm-4">
-      <div class="picture">
-        <% if current_user.image.present? %>
-          <%= image_tag current_user.image_url(:thumb) %>
-        <% else %>
-          <img src="http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1" alt="avatar" height="200" width="200">
-        <% end %>
+    <div class="my_card">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="picture">
+            <% if current_user.image.present? %>
+              <%= image_tag current_user.image_url(:thumb) %>
+            <% else %>
+              <img src="http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1" alt="avatar" height="200" width="200">
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-8">
+            <h2 class="text-center"><%= current_user.name %></h2>
+            <div class="level_status text-center">
+              <span><%= current_user.level %></span>
+            </div>
+          <ul class="my_info">
+            <li>Email：<%= current_user.email %></li>
+            <li>Mobile：<%= current_user.mobile_phone %></li>
+            <li><%= current_user.intro %></li>
+          </ul>
+          <div class="contacts">
+            <ul>
+              <li><i class="fa fa-google-plus-square"></i></li>
+              <li><i class="fa fa-facebook-square"></i></li>
+              <li><i class="fa fa-twitter-square"></i></li>
+              <li><i class="fa fa-linkedin-square"></i></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-8">
-      <ul>
-        <li>姓名：<%= current_user.name %></li>
-        <li>信箱：<%= current_user.email %></li>
-        <li>手機：<%= current_user.mobile_phone %></li>
-        <li>學習階段：<%= current_user.level %></li>
-        <li>自我介紹：<%= current_user.intro %></li>
-      </ul>
     </div>
   </div>
 </div>
 <hr>
 <div id="trainees" class="row">
   <% @trainees.each do |trainee| %>
-    <div class="col-sm-4">
-      <div class="col-sm-4">
-        <div class="picture">
-          <%= image_tag trainee.image_url(:medium) %>
+    <div class="col-sm-4 col-xs-12">
+      <div class="one_card">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="picture">
+              <%= image_tag trainee.image_url(:medium) %>
+            </div>
+            <div class="name">
+              <h3><%= trainee.name %></h3>
+
+              <% if trainee.level == "Entry Level" %>
+                <div class="level_status entry">
+                  <span><%= trainee.level %></span>
+                </div>
+              <% elsif trainee.level == "Medium Level" %>
+                <div class="level_status medium">
+                  <span><%= trainee.level %></span>
+                </div>
+              <% elsif trainee.level == "Advanced Level" %>
+                <div class="level_status advanced">
+                  <span><%= trainee.level %></span>
+                </div>
+              <% end %>
+
+
+              <div class="contacts">
+                <ul>
+                  <li><i class="fa fa-google-plus-square"></i></li>
+                  <li><i class="fa fa-facebook-square"></i></li>
+                  <li><i class="fa fa-twitter-square"></i></li>
+                  <li><i class="fa fa-linkedin-square"></i></li>
+                </ul>
+              </div>
+            </div>
+          </div> 
+          <div class="col-sm-12 others_info">
+            <ul>
+              <li>Email：<%= trainee.email %></li>
+              <li>Mobile：<%= trainee.mobile_phone %></li>
+              <li>  <%= trainee.intro %></li>
+            </ul>
+          </div>
         </div>
-      </div> 
-      <div class="col-sm-8">
-        <ul>
-          <li>姓名：<%= trainee.name %></li>
-          <li>信箱：<%= trainee.email %></li>
-          <li>手機：<%= trainee.mobile_phone %></li>
-          <li>自我介紹：<%= trainee.intro %></li>
-        </ul>
       </div>
     </div>
   <% end %>
