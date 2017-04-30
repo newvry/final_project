@@ -12,7 +12,11 @@
               <% if current_user.name.nil? %>
                 <li><a class="fa fa-users fa-2x" href="<%= edit_user_path(current_user) %>"></a></li>
               <% else %>
-                <li><a class="fa fa-users fa-2x" href="<%= trainees_users_path %>"></a></li>
+                <% if current_user.role == "admin" %>
+                  <li><a class="fa fa-users fa-2x" href="<%= admin_users_path %>"></a></li>
+                <% else %>
+                  <li><a class="fa fa-users fa-2x" href="<%= trainees_users_path %>"></a></li>
+                <% end %>
               <% end %>
             <% end %>
             <li><a class="fa fa-user-o fa-2x" href="#"></a></li>

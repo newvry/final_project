@@ -9,6 +9,10 @@ namespace :dev do
 
       User.create(email: 'alpha@camp', 
                   password: '111111',
+                  name: 'Admin',
+                  image: 'assets/images/default.png',
+                  mobile_phone: '0987654321',
+                  intro: 'Super Admin',
                   role: 'admin',
                   level: 'Advanced Level')
       12.times do
@@ -18,6 +22,7 @@ namespace :dev do
                      remote_image_url: Faker::Avatar.image,
                      mobile_phone: '3345678',
                      level: ["Entry Level", "Medium Level", "Advanced Level"].sample,
+                     role: 'trainee',
                      intro: Faker::Lorem.sentence(3, true))
       end
 
