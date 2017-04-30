@@ -1,3 +1,5 @@
+<%= link_to 'Back', courses_path, class: "btn btn-default btn-xs" %>
+
 <h1><%=current_user.name %>的個人簡介</h1>
 <div class="picture">
 	<% if current_user.image.present? %>
@@ -12,4 +14,4 @@
         <li>學習階段：<%= current_user.level %></li>
         <li>自我介紹：<%= current_user.intro %></li>
       </ul>
-<%= link_to 'Edit', edit_user_path(current_user) %>
+<%= link_to 'Edit', edit_user_path(current_user), class: "btn btn-primary btn-xs" %>
