@@ -31,3 +31,11 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+
+<div id="calendar"></div>
+
+<script>
+  $('#calendar').fullCalendar({
+    events: '/events.json'
+  });
+</script>
