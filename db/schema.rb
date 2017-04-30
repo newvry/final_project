@@ -54,16 +54,6 @@ ActiveRecord::Schema.define(version: 20170427103635) do
     t.index ["user_id"], name: "index_unit_completeds_on_user_id"
   end
 
-  create_table "unit_finisheds", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "unit_id"
-    t.datetime "completed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["unit_id"], name: "index_unit_finisheds_on_unit_id"
-    t.index ["user_id"], name: "index_unit_finisheds_on_user_id"
-  end
-
   create_table "units", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
