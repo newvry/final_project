@@ -1,3 +1,102 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// regular setting=====================================
+
+$color_picton_blue: #4DA1FF
+$color_powderblue_bg: #F4F8F9
+$color_white: #F7F7F7
+$color_cerulean: #007EA7
+$color_prussianblue: #003459
+
+
+
+.admin_btn
+  margin-top: 20px
+
+.navbar
+  height: 97px
+
+.navbar-left
+
+  li
+    margin-left: 10px
+    padding-top: 20.5px
+    padding-bottom: 16.5px
+    border-bottom: solid 4px #f7f7f7
+    transition: .2s
+    a
+      color: $color_picton_blue !important
+
+    &:hover
+      border-bottom: solid 4px $color_picton_blue
+
+.navbar-brand
+  height: 97px
+
+.login
+  margin-top: 23px
+
+.profile
+  text-align: center
+  // border: 1px solid
+  border-radius: 50%
+  width: 60px
+  height: 60px
+  overflow: hidden
+
+
+
+.courses_list
+  .row
+    width: 100%
+    margin-right: 0
+    margin-left: 0
+
+  a
+    &:hover, &:active, &:link, &:visited
+      color: black
+      background-color: transparent
+      text-decoration: none
+
+.course_box
+  height: 60vh
+  max-height: 400px
+  margin: 10px
+
+  border: solid 1px #333
+  border-radius: 10px
+  box-shadow: 0px 0px 8px rgba(0,0,0,.5)
+
+  transition: .5s
+  background-color: #F6F5F5
+  
+
+  &:hover
+    transform: scale(1.02)
+    box-shadow: 0px 0px 10px rgba(0,0,0,.8)
+
+  &:hover h1
+    transform: scale(1.05)
+
+  &:hover p
+    transform: scale(1.2)
+  
+  &:hover .course_info
+    transform: scale(1.1)
+
+.index_intro
+  margin-top: 15%
+
+.row
+  width: 95%
+  margin: auto
+
+.course_info
+  // position: absolute
+  margin-top: 20px
+  transition: .5s
+
+.access
+  margin-top: 120px

@@ -2,9 +2,141 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.picture
-  border-radius: 50%
-  width: 200px
-  height: 200px
+
+// regular setting=====================================
+
+$color_picton_blue: #4DA1FF
+$color_powderblue_bg: #F4F8F9
+$color_white: #F7F7F7
+$color_cerulean: #007EA7
+$color_prussianblue: #003459
+
+
+// trainees page setting ==============================
+
+#current_user
+  .picture 
+    // border: 2px solid
+    border-radius: 50%
+    width: 200px
+    height: 200px
+    box-shadow: 0 0 5px rgba(0,0,0,.5)
+    overflow: hidden
+
+#trainees
+  .picture 
+    // border: 2px solid
+    border-radius: 50%
+    width: 100px
+    height: 100px
+    overflow: hidden
+    box-shadow: 0 0 5px rgba(0,0,0,.5)
+    position: relative
+
+    img
+      position: absolute
+      left: -15px
+      top: -15px
+
+
+.my_card
+  background-color: $color_white
+  box-shadow: 0 0 5px rgba(0,0,0,.3)
+  padding: 20px
+
+  .col-sm-8
+    display: inline-flex
+    flex-direction: column
+
+    .level_status
+      width: 120px
+      background-color: #FC993C
+      margin: auto
+      text-align: center
+      color: white
+      border-radius: 10px
+      box-shadow: 0 0 1px rgba(0,0,0,.3)
+
+    .my_info
+      text-align: left
+      width: 80%
+      margin: auto
+
+    .contacts
+      width: 20%
+      margin: auto
+
+.one_card
+  height: 230px
+  text-align: left
+  margin: 10px 0
+  padding: 20px 5px
+  background-color: $color_white
+  border-left: solid 10px $color_cerulean
+  box-shadow: 0 0 5px rgba(0,0,0,.3)
+  transition: .4s
   overflow: hidden
 
+  &:hover
+    border-left: solid 10px $color_picton_blue
+    transform: translate(3px, -3px)
+    box-shadow: -3px 3px 5px rgba(0,0,0,.8)
+
+
+  .level_status
+    text-align: center
+    color: white
+    border-radius: 10px
+    box-shadow: 0 0 1px rgba(0,0,0,.3)
+
+  .entry
+    background-color: #35BCBF
+
+  .medium
+    background-color: #2D6CDF
+
+  .advanced
+    background-color: #FC993C
+
+  .row
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+  
+  .col-sm-12
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    margin-top: 5px
+
+    h3
+      width: 120px
+      text-align: center
+      margin-top: 5px
+
+    .others_info
+      margin-top: 20px
+      
+.contacts
+  ul
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    font-size: 20px
+
+    li
+      cursor: pointer
+
+      &:first-child
+        color: red
+
+      &:nth-child(2)
+        color: #3B5A9B
+    
+      &:nth-child(3) 
+        color: #1DA1F2
+
+      &:last-child
+        color: #0077B5
