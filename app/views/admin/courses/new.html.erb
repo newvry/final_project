@@ -2,6 +2,6 @@
 <hr>
 <%= simple_form_for @course, url: admin_courses_path do |course| %>
   <%= render partial: "form", locals: {course: course} %>
-  <%= course.submit 'Creat', class: "btn btn-success btn-xs" %>
+  <%= course.submit 'Create Course', class: "btn btn-success btn-xs" %>
 	<%= link_to 'Cancel', admin_courses_path, class: "btn btn-default btn-xs" %>
 <% end %>

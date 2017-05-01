@@ -1,5 +1,7 @@
 class Unit < ApplicationRecord
 
+  validates_presence_of :title, :description, :video
+
   belongs_to :lesson
   has_many :unit_completeds
   has_many :users, through: :unit_completed

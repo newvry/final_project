@@ -18,8 +18,11 @@ class Admin::CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    @course.save
-    redirect_to admin_courses_path
+    if @course.save
+      redirect_to admin_courses_path
+    else
+      render :new
+    end
   end
 
   def edit
