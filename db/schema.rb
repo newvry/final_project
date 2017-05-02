@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502092057) do
+ActiveRecord::Schema.define(version: 20170502133120) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20170502092057) do
     t.string   "image",                  default: "http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1"
     t.string   "fb_uid"
     t.string   "fb_token"
-    t.string   "role"
+    t.string   "role",                   default: "trainee"
     t.string   "name"
     t.string   "level",                  default: "Entry Level"
     t.text     "intro"
