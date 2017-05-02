@@ -41,8 +41,9 @@ gem 'faker'
 gem 'omniauth-facebook'
 gem 'settingslogic'
 gem 'simple_form'
-gem 'fullcalendar-rails'
-gem 'momentjs-rails'
+# gem 'fullcalendar-rails'
+# gem 'momentjs-rails'
+# gem 'bootstrap-daterangepicker-rails', '~> 0.1.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

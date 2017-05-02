@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FinalProject</title>
+    <link rel="icon" href="https://i.imgur.com/mJBO2jz.png">
+    <title>My Taiwan Tour Training</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,6 +16,7 @@
       <div class="container">
        
         <%= yield %>
+        <div id='remote_container'></div>
       </div>  
       <%= render "common/footer" %>
     </div>
