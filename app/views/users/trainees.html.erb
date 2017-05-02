@@ -45,7 +45,11 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="picture">
-              <%= image_tag trainee.image_url(:medium) %>
+              <% if trainee.image.present? %>
+                <%= image_tag trainee.image_url(:medium) %>
+              <% else %>
+                <img src="http://images.iimg.in/c/569f4771c45d324bda8b4660-4-501-0-1453279096/google/user-icon-png-pnglogocom.img?crop=1" alt="avatar" height="128px" width="128px">
+              <% end %>
             </div>
             <div class="name">
               <h3><%= trainee.name %></h3>
