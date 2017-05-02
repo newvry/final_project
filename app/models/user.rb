@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates_uniqueness_of :email, :name
+  validates_uniqueness_of :email, :message => "你的 Email 已被使用過了"
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
