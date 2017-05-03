@@ -22,11 +22,9 @@
                       </div>
                       <div class="who_level">
                         <h4><%= user.name%></h4>
-                        <select name="level" id="admin_set_level">
-                          <option value="entry">Entry</option>
-                          <option value="medium">Medium</option>
-                          <option value="advanced">Advanced</option>
-                        </select>
+                        <%= form_for user do |n| %>
+                          <%= n.collection_select(:course_id, Course.all, :id, :title) %>
+                        <% end %>
                       </div>
                     </div>
                     <div class="row">
