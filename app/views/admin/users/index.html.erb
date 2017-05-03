@@ -22,8 +22,18 @@
                       </div>
                       <div class="who_level">
                         <h4><%= user.name%></h4>
-                        <%= form_for user do |n| %>
-                          <%= n.collection_select(:course_id, Course.all, :id, :title) %>
+                        <% if user.level == "Entry Level" %>
+                          <div class="level_status entry">
+                            <span><%= user.level %></span>
+                          </div>
+                        <% elsif user.level == "Medium Level" %>
+                          <div class="level_status medium">
+                            <span><%= user.level %></span>
+                          </div>
+                        <% elsif user.level == "Advanced Level" %>
+                          <div class="level_status advanced">
+                            <span><%= user.level %></span>
+                          </div>
                         <% end %>
                       </div>
                     </div>
