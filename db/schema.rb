@@ -95,6 +95,8 @@ ActiveRecord::Schema.define(version: 20170502133120) do
     t.string   "level",                  default: "Entry Level"
     t.text     "intro"
     t.integer  "mobile_phone"
+    t.boolean  "email_confirmed",        default: false
+    t.string   "confirm_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["fb_uid"], name: "index_users_on_fb_uid"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
