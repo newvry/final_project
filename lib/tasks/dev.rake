@@ -16,13 +16,16 @@ namespace :dev do
                   role: 'admin',
                   level: 'Advanced Level')
       12.times do
+        @course = Course.all.sample
+
         User.create!(email: Faker::Internet.email,
                      password: '111111',
                      name: Faker::Name.first_name,
                      remote_image_url: Faker::Avatar.image,
                      mobile_phone: '3345678',
-                     level: ["Entry Level", "Medium Level", "Advanced Level"].sample,
+                     level: @course.title,
                      role: 'trainee',
+                     course_id: @course.id,
                      intro: Faker::Lorem.sentence(3, true))
       end
 

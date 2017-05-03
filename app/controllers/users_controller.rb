@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def trainees
-    @trainees = User.all.where("id != ?", current_user.id)
+    @trainees = User.all.where("id != ? and role != ?", current_user.id, "admin")
   end
   
 

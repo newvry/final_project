@@ -11,42 +11,11 @@ $color_cerulean: #007EA7
 $color_prussianblue: #003459
 
 
+.container
+  padding-left: 0 !important
+  padding-right: 0 !important
 
-.admin_btn
-  margin-top: 20px
-
-.navbar
-  height: 97px
-
-.navbar-left
-
-  li
-    margin-left: 10px
-    padding-top: 20.5px
-    padding-bottom: 16.5px
-    border-bottom: solid 4px #f7f7f7
-    transition: .2s
-    a
-      color: $color_picton_blue !important
-
-    &:hover
-      border-bottom: solid 4px $color_picton_blue
-
-.navbar-brand
-  height: 97px
-
-.login
-  margin-top: 23px
-
-.profile
-  text-align: center
-  // border: 1px solid
-  border-radius: 50%
-  width: 60px
-  height: 60px
-  overflow: hidden
-
-
+// index page =================================================
 
 .courses_list
   .row
@@ -90,13 +59,59 @@ $color_prussianblue: #003459
   margin-top: 15%
 
 .row
-  width: 95%
   margin: auto
 
 .course_info
-  // position: absolute
   margin-top: 20px
   transition: .5s
 
 .access
   margin-top: 120px
+
+
+// course show page ===============================================
+
+.course_left_pannel
+  background-color: $color_white
+  box-shadow: 0 0 5px rgba(0,0,0,.5)
+  padding: 10px
+  margin: 10px
+  height: 400px
+
+  a
+    line-height: 100%
+    width: 100%
+    &:hover, &:active, &:link, &:visited
+      color: $color_picton_blue
+      background-color: transparent
+      text-decoration: none
+
+  .lessons_box
+    text-align: center
+    padding: 15px 20px
+    margin-top: 10px
+    border: solid 2px $color_picton_blue
+    border-radius: 5px
+    transition: .3s
+
+    &:hover
+      background-color: $color_picton_blue
+      color: white
+
+
+.course_right_pannel
+  background-color: $color_white
+  box-shadow: 0 0 5px rgba(0,0,0,.5)
+  padding: 20px
+  margin: 10px
+  height: 400px
+
+  a
+    &:hover, &:active, &:link, &:visited
+      color: $color_picton_blue
+      background-color: transparent
+      text-decoration: none
+
+.col-sm-3, .col-sm-9
+  padding-left: 0 !important
+  padding-right: 0 !important
