@@ -4,7 +4,6 @@
     <link rel="icon" href="https://i.imgur.com/mJBO2jz.png">
     <title>My Taiwan Tour Training</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -16,7 +15,9 @@
       <div class="container">
        
         <%= yield %>
-        <div id='remote_container'></div>
+          <% if current_user and current_user.role == "admin" %>
+            <div id='remote_container'></div>
+          <% end %>
       </div>  
       <%= render "common/footer" %>
     </div>

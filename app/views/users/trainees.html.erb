@@ -43,7 +43,7 @@
     <div class="col-sm-4 col-xs-12">
       <div class="one_card">
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12 one_card_top">
             <div class="picture">
               <% if trainee.image.present? %>
                 <%= image_tag trainee.image_url(:medium) %>
@@ -68,7 +68,6 @@
                 </div>
               <% end %>
 
-
               <div class="contacts">
                 <ul>
                   <li><i class="fa fa-google-plus-square"></i></li>
@@ -78,13 +77,19 @@
                 </ul>
               </div>
             </div>
-          </div> 
-          <div class="col-sm-12 others_info">
-            <ul>
-              <li>Email：<%= trainee.email %></li>
-              <li>Mobile：<%= trainee.mobile_phone %></li>
-              <li>  <%= trainee.intro %></li>
-            </ul>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="others_info">
+                <ul>
+                  <li>
+                    <a href="mailto:<%= trainee.email %>"><i class="fa fa-envelope"> Send me !</i></a>
+                  </li>
+                  <li><%= trainee.intro %></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

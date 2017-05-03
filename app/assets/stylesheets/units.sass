@@ -1,3 +1,43 @@
 // Place all the styles related to the units controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// regular setting=====================================
+
+$color_picton_blue: #4DA1FF
+$color_powderblue_bg: #F4F8F9
+$color_white: #F7F7F7
+$color_cerulean: #007EA7
+$color_prussianblue: #003459
+
+
+
+.unit_view
+  height: 200px
+  margin: 0 10px
+  border-radius: 10px 
+  overflow: hidden
+  box-shadow: 0 0 5px rgba(0,0,0,.5)
+  transition: .4s
+
+  .unit_view_top
+    height: 165px
+
+  .unit_view_bot
+    p
+      margin-bottom: 0
+      font-size: 20px
+
+  &:hover
+    transform: translate(3px, -3px)
+    box-shadow: -3px 3px 5px rgba(0,0,0,.8)
+
+#next_btn
+  transition: .2s
+
+.forbid
+  border: solid 1px grey
+  background-color: #eee
+  color: grey
+  cursor: not-allowed
+
