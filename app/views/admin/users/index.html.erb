@@ -44,7 +44,7 @@
                                 <div class="modal-body">
                                   <%= form_for user, url: admin_user_path(user), method: :patch do |n| %>
                                     <%= n.collection_select(:course_id, Course.all, :id, :title) %>
-                                    <%= n.submit, class: "btn btn-success btn-xs" %>
+                                    <%= n.submit class: "btn btn-success btn-xs" %>
                                   <% end %>
                                 </div>
 
