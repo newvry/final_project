@@ -4,5 +4,22 @@ class Admin::UsersController < ApplicationController
     @users = User.where.not(role: "admin")
   end
 
+  def update
+    @user = User.find(params[:id])
+    @course = Course.find(params[:user][:course_id])
+    @user.level = @course.title
+    @user.course_id = @course.id
+
+    @user.update(user_params)
+    redirect_to admin_users_path
+  end
+
+
+
+  private
+
+  def user_params
+     params.require(:user).permit(:course_id, :level)
+  end
 
 end
