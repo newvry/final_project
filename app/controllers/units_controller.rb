@@ -1,5 +1,7 @@
 class UnitsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def show
     @lesson = Lesson.find(params[:lesson_id])
     @course = @lesson.course

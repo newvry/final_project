@@ -2,17 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$color_picton_blue: #4DA1FF
+$color_powderblue_bg: #F4F8F9
+$color_white: #F7F7F7
+$color_cerulean: #007EA7
+$color_prussianblue: #003459
+
+
 .row
   margin: auto  !important
 
 .user_info
-  height: 200px
+  height: 180px
   overflow-wrap: break-word
+  margin: 10px 0
+  box-shadow: 0px 0px 8px rgba(0,0,0,.3)
+  border-radius: 10px
+  background-color: $color_white
 
   .col-sm-12
     padding: 0
 
   #user_top
+    padding: 10px
+
+  #user_left
     display: flex
     flex-direction: row
     align-items: center
@@ -45,5 +59,27 @@
 
       .advanced
         background-color: #FC993C
-      
+  
 
+  #user_bot
+    height: 80px
+    border-top: dashed 2px grey
+
+    .user_progress
+      margin: 10px
+      padding: 5px
+      height: 80px
+      border-radius: 10px
+
+      p
+        font-size: 18px
+
+      span
+        font-size: 40px
+        font-weight: bold
+        margin-top: -20px
+
+      .progress_left
+        border-right: dashed 2px grey
+
+      
