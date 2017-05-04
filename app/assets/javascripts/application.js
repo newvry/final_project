@@ -19,7 +19,7 @@
 //= require daterangepicker
 //= require_tree .
 
-$(document).ready(function(){
+$( document ).on('turbolinks:load', function(){
 
 $("#course_1").css('animation', 'fadeInUp 1s ease-in-out')
 $("#course_2").css({
@@ -29,9 +29,9 @@ $("#course_3").css({
   'animation': 'fadeInUp 1s ease-in-out',
   'animation-delay': '.2s'})
 
-var current_user = $("#current_user").text()
+var current_user = $("#my_current_level").text()
 
-if (current_user != " "){
+if (current_user != ""){
 
   if (current_user == "Entry Level"){
     $("#course_1").find("i").addClass("fa fa-unlock-alt fa-3x")
@@ -47,7 +47,7 @@ if (current_user != " "){
     $('[data-toggle="tooltip"]').tooltip()
 
     $("#course_3, #course_2").find("i").addClass("fa fa-lock fa-3x")
-  }else if (current_user.level == "Medium Level"){
+  }else if (current_user == "Medium Level"){
     $("#course_1").find("i").addClass("fa fa-unlock-alt fa-3x")
 
     $("#course_2").find("i").addClass("fa fa-unlock-alt fa-3x")
@@ -63,6 +63,12 @@ if (current_user != " "){
     $('[data-toggle="tooltip"]').tooltip()
 
     $("#course_3").find("i").addClass("fa fa-lock fa-3x")
+  }else if (current_user == "Advanced Level"){
+    $("#course_1").find("i").addClass("fa fa-unlock-alt fa-3x")
+
+    $("#course_2").find("i").addClass("fa fa-unlock-alt fa-3x")
+
+    $("#course_3").find("i").addClass("fa fa-unlock-alt fa-3x")
   }
 }else{
   $(".access").addClass("fa fa-lock fa-3x")
