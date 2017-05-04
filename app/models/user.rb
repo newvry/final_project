@@ -12,6 +12,18 @@ class User < ApplicationRecord
   has_many :unit_completeds
   has_many :units, through: :unit_completed
 
+
+  belongs_to :course
+
+
+    def unit_count
+      total = 0
+      self.course_id.lessons do |lesson|
+        total = total + lesson.units.size
+      end
+      return total
+    end
+
     def admin?
       self.role == "admin"
     end
