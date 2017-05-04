@@ -22,40 +22,7 @@
 
   <script>
 
-    <% if current_user %>
-
-      <% if current_user.level == "Entry Level" %>
-        $("#course_<%= @courses.first.id %>").find("i").addClass("fa fa-unlock-alt fa-3x")
-
-        $("#course_<%= @courses.second.id %>, #course_<%= @courses.last.id %>").closest("a").click(function(e){
-          e.preventDefault()
-        })
-
-        $("#course_<%= @courses.last.id %>, #course_<%= @courses.second.id %>").find("i").addClass("fa fa-lock fa-3x")
-
-      <% elsif current_user.level == "Medium Level" %>
-        $("#course_<%= @courses.first.id %>").find("i").addClass("fa fa-unlock-alt fa-3x")
-
-        $("#course_<%= @courses.second.id %>").find("i").addClass("fa fa-unlock-alt fa-3x")
-
-        $("#course_<%= @courses.last.id %>").closest("a").click(function(e){
-          e.preventDefault()
-        })
-        $("#course_<%= @courses.last.id %>").find("i").addClass("fa fa-lock fa-3x")
-      
-      <% else %>
-        $("#course_<%= @courses.first.id %>, #course_<%= @courses.second.id %>, #course_<%= @courses.last.id %>").find("i").addClass("fa fa-unlock-alt fa-3x")
-      
-      <% end %>
-
-    <% else %>
-      $(".access").addClass("fa fa-lock fa-3x")
-      $(".row").find("a").click(function(e){
-        e.preventDefault()
-      })
-
-    <% end %>
-
+    
     
   
   </script>

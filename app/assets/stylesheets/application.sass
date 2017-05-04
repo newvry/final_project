@@ -6,7 +6,18 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 @import "font-awesome"
+@import "animate"
 
+// keyframes ==========================================
+
+@keyframes fadeInUp
+  from 
+    opacity: 0
+    transform: translate3d(0, 20%, 0)
+
+  to
+    opacity: 1
+    transform: none
 
 // regular setting=====================================
 
@@ -45,8 +56,6 @@ th
 
 .hidden
   opacity: 0
-
-
 
 // navbar setting======================================
 

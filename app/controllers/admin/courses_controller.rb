@@ -8,10 +8,6 @@ class Admin::CoursesController < ApplicationController
     @courses = Course.all
   end
 
-  def new
-    @course = Course.new
-  end
-
   def show
     @lessons = @course.lessons
   end
@@ -42,7 +38,7 @@ class Admin::CoursesController < ApplicationController
   private
 
   def find_course
-    @course = Course.find(params[:id])
+    @course = Course.find(params[:id]).includes(:lessons)
   end
 
   def course_params

@@ -67,12 +67,20 @@ $color_prussianblue: #003459
   margin: 10px
   height: 400px
 
+  .unit_view_top
+    transition: .4s
+    &:hover
+      transform-origin: 0 80%
+      transform: scale(1.05)
+
+  .unit_view_bot
+    z-index: 2
+
   a
     &:hover, &:active, &:link, &:visited
       color: $color_picton_blue
       background-color: transparent
       text-decoration: none
-
 
 
 
