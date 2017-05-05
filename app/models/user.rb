@@ -15,12 +15,9 @@ class User < ApplicationRecord
 
   belongs_to :course
 
-
     def unit_count
       total = 0
-      self.course_id.lessons do |lesson|
-        total = total + lesson.units.size
-      end
+      total = total + self.course.lessons.map {|lesson| total + lesson.units.count}.sum
       return total
     end
 
