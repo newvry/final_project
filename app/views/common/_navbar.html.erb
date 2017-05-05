@@ -17,6 +17,8 @@
                   <li><a class="fa fa-users fa-2x" href="<%= trainees_users_path %>"></a></li>
                 <% end %>
               <% end %>
+            <% else %>
+              <li><a class="fa fa-users fa-2x" href="<%= trainees_users_path %>"></a></li>
             <% end %>
             <li><a class="fa fa-calendar-o fa-2x" href="<%= activities_path %>"></a></li>
           </ul>
