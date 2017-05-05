@@ -6,10 +6,16 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript"> 
+      $(function (){ 
+        $("#myModal").modal({show:false });
+      })
+    </script>
   </head>
 
   <body>
-
+      <%= render "devise/registrations/login_modal" %>
+      <%= render "devise/registrations/sign_up_modal" %>
       <%= render "common/navbar" %>
 
       <div class="container">

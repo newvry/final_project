@@ -56,8 +56,12 @@
                 </ul>
 
               <% else %>
-                  <li><%= link_to '註冊', new_registration_path(:user), :class => "glyphicon glyphicon-log-in" %></li>
-                  <li><%= link_to '登入', new_session_path(:user), :class => "glyphicon glyphicon-user" %></li>
+                <div class="user_account">
+                  <ul>
+                    <li><%= link_to " Sign up", "#sign_up", "data-toggle" => "modal", :class => "fa fa-sign-in" %></li>
+                    <li><%= link_to " Login", "#login", "data-toggle" => "modal", :class => "fa fa-user-circle" %></li>
+                  </ul>
+                </div>
               <% end %>
             </li>
           </ul>
