@@ -38,7 +38,7 @@ class Admin::CoursesController < ApplicationController
   private
 
   def find_course
-    @course = Course.find(params[:id]).includes(:lessons)
+    @course = Course.find(params[:id])
   end
 
   def course_params

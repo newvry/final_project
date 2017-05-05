@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :units do
       get :previous_unit
       get :next_unit
+      get :previous_lesson
+      get :next_lesson
     end
   end
 
