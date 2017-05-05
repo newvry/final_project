@@ -28,6 +28,10 @@ $("a:nth-child(2) .course_box").css({
 $("a:last-child .course_box").css({
   'animation': 'fadeInUp 1s ease-in-out',
   'animation-delay': '.2s'})
+  
+$("a:first-child .course_box .bg_color").css('background-color', '#FFB100')
+$("a:nth-child(2) .bg_color").css('background-color', '#FF6F7E')
+$("a:last-child .bg_color").css('background-color', '#208DCC')
 
 var current_user = $("#my_current_level").text()
 
