@@ -7,7 +7,6 @@
           </div>
 
           <ul class="nav navbar-nav navbar-left">
-            <li><a class="fa fa-clone fa-2x" href="/"></a></li>
             <% if current_user %>
               <% if current_user.name.nil? %>
                 <li><a class="fa fa-users fa-2x" href="<%= edit_user_path(current_user) %>"></a></li>
@@ -20,7 +19,6 @@
               <% end %>
             <% end %>
             <li><a class="fa fa-calendar-o fa-2x" href="<%= activities_path %>"></a></li>
-            <li><a class="fa fa-file-text-o fa-2x" href="#"></a></li>
           </ul>
           
           <ul class="nav navbar-nav navbar-right">

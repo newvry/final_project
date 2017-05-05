@@ -9,6 +9,9 @@ $color_powderblue_bg: #F4F8F9
 $color_white: #F7F7F7
 $color_cerulean: #007EA7
 $color_prussianblue: #003459
+$color_entry: #FFCE00
+$color_medium: #FF6F7E
+$color_advanced: #208DCC
 
 
 .container
@@ -32,7 +35,9 @@ $color_prussianblue: #003459
 .course_box
   height: 60vh
   max-height: 400px
+  max-width: 400px
   margin: 10px
+  position: relative
 
   border: solid 1px #333
   border-radius: 10px
@@ -40,6 +45,17 @@ $color_prussianblue: #003459
 
   transition: .5s
   background-color: #F6F5F5
+
+  overflow: hidden
+
+  .course_intro
+    height: 100%
+    width: 100%
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.9))
+    position: absolute
+    bottom: -100%
+    transition: .4s ease-in
+    color: white
 
   &:hover
     transform: scale(1.02)
@@ -54,6 +70,13 @@ $color_prussianblue: #003459
   &:hover .course_info
     transform: scale(1.1)
 
+  &:hover .course_intro
+    bottom: 0
+
+.bg_color
+    
+
+
 .index_intro
   margin-top: 15%
 
@@ -66,6 +89,9 @@ $color_prussianblue: #003459
 
 .access
   margin-top: 120px
+
+
+
 
 
 // course show page ===============================================
