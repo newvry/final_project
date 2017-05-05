@@ -37,15 +37,24 @@ class UnitsController < ApplicationController
   def previous_lesson
     @lesson = Lesson.find(params[:lesson_id])
     @unit = @lesson.units.find(params[:unit_id])
+    @course = @lesson.course
 
-    @previous_lesson = Lesson.where("id < ?", @lesson.id).last
-    @previous_lesson_unit = Unit.where("id < ?", @unit.id).last
+    @previous_lesson = Lesson.where("id < ? and course_id = ?", @lesson.id, @course.id).last
+    @previous_lesson_unit = @previous_lesson.units.last
 
     redirect_to lesson_unit_path(@previous_lesson, @previous_lesson_unit)
 
   end
 
   def next_lesson
+    @lesson = Lesson.find(params[:lesson_id])
+    @unit = @lesson.units.find(params[:unit_id])
+    @course = @lesson.course
+  
+    mark_completed(@unit)
+    @next_lesson = Lesson.where("id > ? and course_id = ?", @lesson.id, @course.id).first
+    @next_lesson_unit = @next_lesson.units.first
+    redirect_to lesson_unit_path(@next_lesson, @next_lesson_unit)
   end
 
 end

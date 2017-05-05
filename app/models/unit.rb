@@ -22,5 +22,14 @@ class Unit < ApplicationRecord
     self != @lesson.units.last
   end
 
+  def is_first?
+    @lesson = self.lesson
+    self == @lesson.units.first
+  end  
+
+  def is_last?
+    @lesson = self.lesson
+    self == @lesson.units.last
+  end 
   
 end
