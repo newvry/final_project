@@ -6,18 +6,20 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 @import "font-awesome"
-@import "animate"
 
 // keyframes ==========================================
 
 @keyframes fadeInUp
-  from 
+  from
     opacity: 0
     transform: translate3d(0, 20%, 0)
 
   to
     opacity: 1
     transform: none
+
+.fadeInUp
+  animation-name: fadeInUp
 
 // regular setting=====================================
 
@@ -57,9 +59,9 @@ th
 .hidden
   opacity: 0
 
-.modal
+.modal_window
   background-color: white
-  width: 400px
+  width: 300px
   height: 400px
   margin: auto
   margin-top: 50px
