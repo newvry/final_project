@@ -16,7 +16,11 @@
                   <div class="row">
                     <div class="col-sm-6" id="user_left">
                       <div class="picture">
-                        <%= image_tag user.image_url(:thumb) %>
+                        <% if user.image.present? %>
+                          <%= image_tag user.image_url(:thumb) %>
+                        <% else %>
+                           <img class="default_avatar" src="https://i.imgur.com/IQUU8my.png" alt="avatar" height="80px" width="80px">
+                        <% end %>
                       </div>
                       <div class="who_level">
                         <h4><%= user.name%></h4>
@@ -75,7 +79,7 @@
                       </div>
                       <div class="progress_right col-sm-6">
                         <p>Pending</p>
-                        <span class="pull-right">99</span>
+                        <span class="pull-right"><%= user.unit_count %></span>
                       </div>
                     </div>
                   </div>
