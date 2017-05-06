@@ -21,6 +21,17 @@ class User < ApplicationRecord
       return total
     end
 
+    def current_course_units_completed
+      total = 0
+      self.course.lessons.flat_map do |lesson|
+        lesson.units.flat_map do |unit|
+          total = total + 1 if unit.unit_completeds.where(user_id: self.id).any?
+        end
+      end
+      return total
+
+    end
+
     def admin?
       self.role == "admin"
     end
