@@ -1,6 +1,6 @@
 class Unit < ApplicationRecord
 
-  validates_presence_of :title, :description, :video
+  validates_presence_of :title, :description, :video, :image
 
   mount_uploader :image, PhotoImageUploader
 
