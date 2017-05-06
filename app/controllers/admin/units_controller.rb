@@ -38,7 +38,7 @@ class Admin::UnitsController < ApplicationController
   private
 
   def unit_params
-    params.require(:unit).permit(:title, :description, :lesson_id, :video)
+    params.require(:unit).permit(:title, :description, :lesson_id, :video, :image)
   end
 
   def unit_find

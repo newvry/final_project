@@ -31,7 +31,10 @@
             <div class="col-sm-3">
               <%= link_to lesson_unit_path(@lesson, unit) do %>
                 <div class="unit_view">
-                  <div id="unit_<%= unit.id %>" class="unit_view_top">
+                  <div class="unit_view_top">
+                    <% if unit.image.present? %>
+                      <%= image_tag unit.image_url %>
+                    <% end %>
                   </div>
                   <div class="unit_view_bot text-center">
                     <p><%= unit.title %></p>
