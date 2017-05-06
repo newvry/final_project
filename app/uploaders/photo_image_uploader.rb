@@ -23,6 +23,9 @@ class PhotoImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [60,60]
   end
 
+  # version :unit_image do #設同時切其他size的版本-medium
+  #   process resize_to_fill: [195,168]
+  # end
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog

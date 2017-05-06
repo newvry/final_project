@@ -31,11 +31,11 @@
             <div class="col-sm-3">
               <%= link_to lesson_unit_path(@lesson, unit) do %>
                 <div class="unit_view">
-                  <div class="unit_view_top">
-                    <% if unit.image.present? %>
-                      <%= image_tag unit.image_url %>
-                    <% end %>
-                  </div>
+                  <% if unit.image.present? %>
+                    <div class="unit_view_top" style="background: url(<%= unit.image_url %>);background-size: cover; background-position: center;">
+                    </div>
+
+                  <% end %>
                   <div class="unit_view_bot text-center">
                     <p><%= unit.title %></p>
                   </div>
@@ -48,28 +48,3 @@
     </div>
   </div>
 </div>
-
-
-
-<script>
-
-<% if @lesson == Course.first.lessons.first %>
-
-    $('#unit_<%= @lesson.units.first.id %>').css({
-      "background-image": "url('https://i.imgur.com/Cnx8I6i.jpg')",
-      "background-size": "cover",
-      "background-position": "center"
-      })
-    $('#unit_<%= @lesson.units.second.id %>').css({
-      "background-image": "url('https://i.imgur.com/XxPxiag.jpg')",
-      "background-size": "cover",
-      "background-position": "center"
-      })
-    $('#unit_<%= @lesson.units.last.id %>').css({
-      "background-image": "url('https://i.imgur.com/HAFPKJt.jpg')",
-      "background-size": "cover",
-      "background-position": "center"
-      })
-  <% end %>
-
-</script>
