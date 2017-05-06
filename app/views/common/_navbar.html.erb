@@ -25,13 +25,13 @@
           
           <ul class="nav navbar-nav navbar-right">
 
-            <li>
               <% if current_user %>
+                  <li class="greeting">Hi ! <%= current_user.name.empty? ? current_user.email : current_user.name %></li>
                 <% if current_user.role == 'admin' %>
                   <li class="admin_btn"><%= link_to('管理後台', admin_courses_path) %></li>
                 <% end %>
               <% end %>
-            </li>
+
 
             <li class="dropdown">
               <% if current_user %>

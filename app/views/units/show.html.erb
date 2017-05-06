@@ -4,31 +4,38 @@
 <hr>
 
 <div class="row">
-  <div class="col-lg-3 unit_left_pannel">
-    <% @lesson.units.each do |t| %>
-      <%= link_to lesson_unit_path(@lesson, t) do %>
-        <%= t.title %><br>
+  <div class="col-sm-3">
+    <div class="unit_left_panel">
+    <h2>Units</h2>
+    <hr>
+      <% @lesson.units.each do |t| %>
+        <%= link_to lesson_unit_path(@lesson, t) do %>
+          <div class="unit_box">
+            <%= t.title %><br>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 
-  <div class="col-lg-9 unit_left_pannel">
-    <h4><%= @unit.title %></h4>
-    <p><%= @unit.description %></p>
-    <iframe width="560" height="315" src="<%= @unit.video %>" frameborder="0" allowfullscreen></iframe>
-    <br>
+  <div class="col-sm-9">
+    <div class="unit_right_panel">
+      <h4><%= @unit.title %></h4>
+      <p><%= @unit.description %></p>
+      <div class="video_view">
+        <iframe width="100%" height="auto" src="<%= @unit.video %>" frameborder="0" allowfullscreen class="video"></iframe>
+      </div>
+      <br>
 
-    <% unless @unit.id == Unit.first.id %>
-      <%= link_to("Previous Lesson", lesson_unit_previous_lesson_path(@lesson, unit_id: @unit), class: "btn btn-primary btn-xs") if @unit.is_first? %>
-    <% end %>
-    <%= link_to("Previous", lesson_unit_previous_unit_path(@lesson, unit_id: @unit), class: "btn btn-primary btn-xs") if @unit.not_first %>
-    <%= link_to("Next", lesson_unit_next_unit_path(@lesson, unit_id: @unit), class: "forbid btn btn-xs", id: "next_btn") if @unit.not_last %>
-    <% unless @unit.id == Unit.last.id %>
-      <%= link_to("Next Lesson", lesson_unit_next_lesson_path(@lesson, unit_id: @unit), class: "forbid btn btn-xs", id: "next_btn") if @unit.is_last? %>
-    <% end %>
-
-
-
+      <% unless @unit.id == Unit.first.id %>
+        <%= link_to("Previous Lesson", lesson_unit_previous_lesson_path(@lesson, unit_id: @unit), class: "btn btn-primary btn-xs") if @unit.is_first? %>
+      <% end %>
+      <%= link_to("Previous", lesson_unit_previous_unit_path(@lesson, unit_id: @unit), class: "btn btn-primary btn-xs") if @unit.not_first %>
+      <%= link_to("Next", lesson_unit_next_unit_path(@lesson, unit_id: @unit), class: "forbid btn btn-xs", id: "next_btn") if @unit.not_last %>
+      <% unless @unit.id == Unit.last.id %>
+        <%= link_to("Next Lesson", lesson_unit_next_lesson_path(@lesson, unit_id: @unit), class: "forbid btn btn-xs", id: "next_btn") if @unit.is_last? %>
+      <% end %>
+    </div>
   </div>
 </div>
 
