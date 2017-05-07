@@ -1,17 +1,46 @@
-<%= link_to 'Back', courses_path, class: "btn btn-default btn-xs" %>
-
-<h1><%=current_user.name %>的個人簡介</h1>
-<div class="picture">
-	<% if current_user.image.present? %>
-		<%= image_tag current_user.image_url(:thumb) %> 
-  <% else %>
-     <img src="https://i.imgur.com/IQUU8my.png" alt="avatar" height="200" width="200">
-   <% end %>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="my_profile col-sm-6">
+    <h1 class="text-center"><%=current_user.name %>'s profile</h1>
+    <div class="self_info_view">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="left">
+            <% if current_user.image.present? %>
+              <%= image_tag current_user.image_url(:thumb) %> 
+            <% else %>
+              <img src="https://i.imgur.com/IQUU8my.png" alt="avatar" height="200" width="200">
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="right">
+            <table class="table-striped ">
+              <tr>
+                <th>Email</th>
+                <td><%= current_user.email %></td>
+              </tr>
+              <tr>
+                <th>Mobile</th>
+                <td><%= current_user.mobile_phone %></td>
+              </tr>
+              <tr>
+                <th>Current Level</th>
+                <td><%= current_user.level %></td>
+              </tr>
+              <tr>
+                <th>About me</th>
+                <td><%= current_user.intro %></td>
+              </tr>
+            </table>
+            <div class="text-center">
+              <%= link_to 'Edit', edit_user_path(current_user), class: "btn btn-primary btn-xs" %>
+              <%= link_to 'Back', courses_path, class: "btn btn-default btn-xs" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
 </div>
-      <ul>
-        <li>信箱：<%= current_user.email %></li>
-        <li>手機：<%= current_user.mobile_phone %></li>
-        <li>學習階段：<%= current_user.level %></li>
-        <li>自我介紹：<%= current_user.intro %></li>
-      </ul>
-<%= link_to 'Edit', edit_user_path(current_user), class: "btn btn-primary btn-xs" %>
