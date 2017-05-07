@@ -12,6 +12,10 @@ class Admin::CoursesController < ApplicationController
     @lessons = @course.lessons
   end
 
+  def new
+    @course = Course.new
+  end
+
   def create
     @course = Course.new(course_params)
     if @course.save
