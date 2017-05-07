@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170507054714) do
+ActiveRecord::Schema.define(version: 20170507085421) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 20170507054714) do
     t.integer  "mobile_phone"
     t.boolean  "email_confirmed",        default: false
     t.string   "confirm_token"
-    t.integer  "course_id",              default: 1
+    t.integer  "course_id",              default: 14
     t.string   "user_google"
     t.string   "user_facebook"
     t.string   "user_twitter"
