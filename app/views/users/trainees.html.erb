@@ -17,8 +17,20 @@
         </div>
         <div class="col-sm-3">
             <h2 class="text-center"><%= current_user.name %></h2>
-            <div class="level_status text-center">
-              <span><%= current_user.level %></span>
+            <div class="my_level text-center">
+              <% if current_user.level == "Entry Level" %>
+                <div class="level_status entry">
+                  <span><%= current_user.level %></span>
+                </div>
+              <% elsif current_user.level == "Medium Level" %>
+                <div class="level_status medium">
+                  <span><%= current_user.level %></span>
+                </div>
+              <% elsif current_user.level == "Advanced Level" %>
+                <div class="level_status advanced">
+                  <span><%= current_user.level %></span>
+                </div>
+              <% end %>
             </div>
           <ul class="my_info">
             <li>Email：<%= current_user.email %></li>
