@@ -1,10 +1,23 @@
 <%= f.label :image, 'image' %>
 <%= f.file_field :image %>
+
 <%= f.label :name, 'Name' %>
-<%= f.text_field :name, class: "form-control" %>
+<%= f.text_field :name, class: "form-control", placeholder: "Peter" %>
 
 <%= f.label :mobile_phone, 'Mobile Phone' %>
-<%= f.text_field :mobile_phone, class: "form-control" %>
+<%= f.text_field :mobile_phone, class: "form-control", placeholder: "0987654321" %>
 
 <%= f.label :intro, 'Intro' %>
-<%= f.text_field :intro, class: "form-control" %>
+<%= f.text_field :intro, class: "form-control", placeholder: "Hi, I'm Peter." %>
+
+<%= f.label :user_facebook, 'Facebook' %>
+<%= f.text_field :user_facebook, class: "form-control", placeholder: "https://www.facebook.com/your_account" %>
+
+<%= f.label :user_linkedin, 'Linkedin' %>
+<%= f.text_field :user_linkedin, class: "form-control", placeholder: "https://www.linkedin.com/your account" %>
+
+<%= f.label :user_google, 'Google Plus' %>
+<%= f.text_field :user_google, class: "form-control", placeholder: "https://plus.google.com/your account" %>
+
+<%= f.label :user_twitter, 'Twitter' %>
+<%= f.text_field :user_twitter, class: "form-control", placeholder: "https://twitter.com/your account" %>
