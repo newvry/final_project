@@ -27,14 +27,16 @@
       </div>
       <br>
 
-      <% unless @unit.id == Unit.first.id %>
-        <%= link_to("Previous Lesson", lesson_unit_previous_lesson_path(@lesson, unit_id: @unit), class: "btn btn-primary btn-xs") if @unit.is_first? %>
-      <% end %>
-      <%= link_to("Previous", lesson_unit_previous_unit_path(@lesson, unit_id: @unit), class: "btn btn-primary btn-xs") if @unit.not_first %>
-      <%= link_to("Next", lesson_unit_next_unit_path(@lesson, unit_id: @unit), class: "forbid btn btn-xs", id: "next_btn") if @unit.not_last %>
-      <% unless @unit.id == Unit.last.id %>
-        <%= link_to("Next Lesson", lesson_unit_next_lesson_path(@lesson, unit_id: @unit), class: "forbid btn btn-xs", id: "next_btn") if @unit.is_last? %>
-      <% end %>
+      <div class="unit_btns text-center">
+        <% unless @unit.id == Unit.first.id %>
+          <%= link_to("Previous Lesson", lesson_unit_previous_lesson_path(@lesson, unit_id: @unit), class: "btn btn-primary btn-xs") if @unit.is_first? %>
+        <% end %>
+        <%= link_to("Previous", lesson_unit_previous_unit_path(@lesson, unit_id: @unit), class: "btn btn-primary btn-xs") if @unit.not_first %>
+        <%= link_to("Next", lesson_unit_next_unit_path(@lesson, unit_id: @unit), class: "forbid btn btn-xs next_btn") if @unit.not_last %>
+        <% unless @unit.id == Unit.last.id %>
+          <%= link_to("Next Lesson", lesson_unit_next_lesson_path(@lesson, unit_id: @unit), class: "forbid btn btn-xs next_btn") if @unit.is_last? %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -45,13 +47,13 @@
       <% if UnitCompleted.where(unit_id: @unit, user_id: current_user).empty? %>
 
         setTimeout(function() {
-          $('#next_btn').removeClass('forbid')
-          $('#next_btn').addClass('btn-primary')
+          $('.next_btn').removeClass('forbid')
+          $('.next_btn').addClass('btn-primary')
         }, 5000)
 
       <% else %>
-        $('#next_btn').removeClass('forbid')
-        $('#next_btn').addClass('btn-primary')
+        $('.next_btn').removeClass('forbid')
+        $('.next_btn').addClass('btn-primary')
 
       <% end %>
 
