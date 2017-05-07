@@ -37,11 +37,11 @@
                         
                           <!-- Trigger the modal with a button -->
                           <% if user.level == "Entry Level" %>
-                            <button type="button" class="btn entry btn-xs" data-toggle="modal" data-target="#myModal_<%= user.id %>"><%= user.level %></button>
+                            <button type="button" class="btn entry btn-xs" style="color:white;" data-toggle="modal" data-target="#myModal_<%= user.id %>"><%= user.level %></button>
                           <% elsif user.level == "Medium Level" %>
-                            <button type="button" class="btn medium btn-xs" data-toggle="modal" data-target="#myModal_<%= user.id %>"><%= user.level %></button>
+                            <button type="button" class="btn medium btn-xs" style="color:white;" data-toggle="modal" data-target="#myModal_<%= user.id %>"><%= user.level %></button>
                           <% else %>
-                            <button type="button" class="btn advanced btn-xs" data-toggle="modal" data-target="#myModal_<%= user.id %>"><%= user.level %></button>
+                            <button type="button" class="btn advanced btn-xs" style="color:white;" data-toggle="modal" data-target="#myModal_<%= user.id %>"><%= user.level %></button>
                           <% end %>
 
                           <!-- Modal -->
