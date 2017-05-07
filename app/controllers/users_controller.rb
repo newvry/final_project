@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:image, :name, :intro, :level, :mobile_phone)
+    params.require(:user).permit(:image, :name, :intro, :level, :mobile_phone, :user_facebook, :user_linkedin, :user_google, :user_twitter)
   end
 
 end
