@@ -9,9 +9,9 @@
 Course.destroy_all
 
 course_list = [
-  {"title" => "Entry Level", "description" => "第一關"},
-  {"title" => "Medium Level", "description" => "第二關"},
-  {"title" => "Advanced Level", "description" => "第三關"}
+  {"title" => "Entry Level", "description" => "All the tools you need to create a professional web presence along with training from our guide support team to help you design quality tour offerings."},
+  {"title" => "Medium Level", "description" => "Through our multiple online marketing channels (social, paid advertising and editorial), we make it easy for travelers to find your tours."},
+  {"title" => "Advanced Level", "description" => "We promptly handle all customer payments to you through our credit card processing system. Our sophisticated calendar system lets you control your work availability."}
 ]
 
 
@@ -22,16 +22,16 @@ end
 Lesson.destroy_all
 
 lesson_list = [
-  {"title" => "導覽簡介與認識旅客", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Entry Level").id},
-  {"title" => "旅程中的溝通與關懷技巧", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Entry Level").id},
-  {"title" => "旅遊常見問題解決與應對", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Entry Level").id},
-  {"title" => "歷史", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Medium Level").id},
-  {"title" => "飲食", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Medium Level").id},
-  {"title" => "建築", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Medium Level").id},
-  {"title" => "主題式瀏覽", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Medium Level").id},
-  {"title" => "生活策展學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Advanced Level").id},
-  {"title" => "演講學", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Advanced Level").id},
-  {"title" => "創作應用", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Advanced Level").id}
+  {"title" => "Basic guilding and understanding customers", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Entry Level").id},
+  {"title" => "Communication and caring skills in the journey", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Entry Level").id},
+  {"title" => "Travel Problem Solving and Response", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Entry Level").id},
+  {"title" => "Histroy", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Medium Level").id},
+  {"title" => "Food", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Medium Level").id},
+  {"title" => "Architecture", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Medium Level").id},
+  {"title" => "Theme browsing", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Medium Level").id},
+  {"title" => "Life planning", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Advanced Level").id},
+  {"title" => "Lecture", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Advanced Level").id},
+  {"title" => "Creative application", "description" => "Lorem ipsum dolor sit amet.", "course_id" => Course.find_by(title: "Advanced Level").id}
 ]
 
 lesson_list.each do |lesson|
@@ -41,9 +41,9 @@ end
 Unit.destroy_all
 
 unit_list = [
-  {"title" => "平溪影片", "description" => "介紹平溪", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id, "video" => "https://www.youtube.com/embed/UuWO1ZyJR6o" },
-  {"title" => "艋舺影片", "description" => "介紹艋舺", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id, "video" => "https://www.youtube.com/embed/Stj-mGv9nHI" },
-  {"title" => "基隆地標影片", "description" => "基隆地標影片", "lesson_id" => Lesson.find_by(title: "導覽簡介與認識旅客").id, "video" => "https://www.youtube.com/embed/39EOBVsUQXI"  }
+  {"title" => "Pingxi", "description" => "Pingxi District is the Republic of China New North City under the jurisdiction of a municipal area, the territory of the mountain, the new population of the city of the least population, the population has less than five thousand people, the annual Lunar New Year after the day is the most well known One of the important activities.", "lesson_id" => Lesson.find_by(title: "Basic guilding and understanding customers").id, "video" => "https://www.youtube.com/embed/UuWO1ZyJR6o" },
+  {"title" => "Monga", "description" => "Monga for the birthplace of Taipei City, was also the Taiwanese indigenous people gathered together, the oldest city in the 'shade hat kitchen,' the site 'Daxi mouth', now the Guiyang Street and the junction of Henan. Pingpu people ship and Han Chinese trade, because the boat for the Bangka, and was referred to here as Taiwanese 'Monga'", "lesson_id" => Lesson.find_by(title: "Basic guilding and understanding customers").id, "video" => "https://www.youtube.com/embed/Stj-mGv9nHI" },
+  {"title" => "Keelong landmarks", "description" => "Keelung City is one of the three cities in the real jurisdiction of the Republic of China. It is located in the northeastern part of the island of Taiwan. The ancient name 'cages' is famous for its natural harbor in Sham Shui Po, the most northern city in Taiwan. Is the primary shipping hub of North Taiwan, and thus 'Taiwan head' and 'Taiwan North entrance' said", "lesson_id" => Lesson.find_by(title: "Basic guilding and understanding customers").id, "video" => "https://www.youtube.com/embed/39EOBVsUQXI"  }
 ]
 
 

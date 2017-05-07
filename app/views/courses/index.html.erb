@@ -9,14 +9,13 @@
                   <h2><%= course.title %></h2>
                 </div>
                 <div class="course_info text-muted">
-                  <div class="total_hours"><span>Total Hours : 12 hrs</span></div>
+                  <div class="total_hours" style="transition: .2s;"><span>Total Hours : 12 hrs</span></div>
                 </div>
                 <i class="access"></i>
               </li>
               <div class="bg_color"></div>
               <div class="course_intro text-center">
-                <h3>Lorem ipsum dolor.</h3>
-                <p style="padding: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste exercitationem accusantium error blanditiis earum nostrum, qui cum voluptatum voluptate inventore.</p>
+                <p class="intro_text"></p>
               </div>
             </div>
           </div>
@@ -26,7 +25,9 @@
   </ul>
 
   <script>
-
+    $("a:first-child").find(".course_intro p").text("<%= Course.first.description %>")
+    $("a:nth-child(2)").find(".course_intro p").text("<%= Course.second.description %>")
+    $("a:last-child").find(".course_intro p").text("<%= Course.last.description %>")
     
     
   

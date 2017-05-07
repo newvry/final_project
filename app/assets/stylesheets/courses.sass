@@ -50,11 +50,14 @@ $color_advanced: #208DCC
   .course_intro
     height: 100%
     width: 100%
-    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.9))
     position: absolute
     bottom: -100%
     transition: .4s ease-in
-    color: white
+    color: black
+    opacity: 0
+
+    .intro_text
+      padding: 100px 40px 0 40px
 
   &:hover
     transform: scale(1.02)
@@ -68,15 +71,23 @@ $color_advanced: #208DCC
   
   &:hover .course_info
     transform: scale(1.1)
+    opacity: 0
 
   &:hover .course_intro
     bottom: 0
+    opacity: 1
+
+  &:hover .bg_color
+    top: 0%
+    transform: rotate(45deg)
+    z-index: -1
 
 .bg_color
   width: 150%
   height: 150%
   border-radius: 10px
   transform: rotate(65deg)
+  transition: .4s ease-in
   position: absolute
   left: -45%
   top: 55%
