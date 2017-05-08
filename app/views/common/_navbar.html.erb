@@ -28,7 +28,7 @@
               <% if current_user %>
                   <li class="greeting">Hi ! <%= current_user.name.nil? ? current_user.email : current_user.name %></li>
                 <% if current_user.role == 'admin' %>
-                  <li class="admin_btn"><%= link_to('administrator', admin_courses_path) %></li>
+                  <li class="admin_btn"><%= link_to '', admin_courses_path, class: "fa fa-cog fa-2x" %></li>
                 <% end %>
               <% end %>
 
