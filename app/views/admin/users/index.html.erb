@@ -19,7 +19,7 @@
       <div class="dashboard_left">
         <% @users.each do |user| %>
           <div class="col-sm-6">
-            <div class="user_info">
+            <div class="user_info" id="<%= user.id %>_info">
               <div class="row">
                 <div class="col-sm-12" id="user_top">
                   <div class="row">
@@ -107,3 +107,13 @@
 
   </div>
 </div>
+
+
+<script>
+  <% @users.each do |user| %>
+    <% if (user.unit_count - user.current_course_units_completed == 0) %>
+      $("#<%= user.id %>_info").css('animation', 'pulse 1s both infinite')
+    <% end %>
+  <% end %>
+
+</script>
